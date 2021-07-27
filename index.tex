@@ -1,27 +1,34 @@
-\documentclass{article}
+\documentclass{article}[12pt]
 \usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm, inner=3cm]{geometry}
 \usepackage{graphicx}
 
+\def\blankpage{
+    \clearpage
+    \thispagestyle{empty}
+    \addtocounter{page}{-1}
+    \null
+    \clearpage}
+
 \begin{document}
-
-\input{includes/titlepage.tex}
-\section{Introduzione}
-\section{Struttura di una rete cellulare}
-\section{Tecnologie di telefonia cellulare}
-\subsection{Funzionamento}
-\subsection{1G, 2G, 3G}
-\subsection{4G}
-\subsection{5G}
-\section{Meccanismi di Autenticazione}
-\subsection{1G, 2G, 3G}
-\subsection{4G}
-\subsection{5G}
-\section{Vulnerablità dei meccanismi di autenticazione}
-\section{Attacco Denial of Service}
-\subsection{Descrizione}
-\subsection{Utilizzo di dispositivi SIM-less}
-\subsection{Potenzialità}
-\section{Possibili soluzioni}
-\section{Conclusioni}
-
+    \input{includes/titlepage.tex}
+    \blankpage
+    \tableofcontents{}
+    \clearpage
+    \listoffigures
+    \clearpage
+    \input{includes/introduzione.tex}
+    \clearpage
+    \input{includes/retecellulare.tex}
+    \clearpage
+    \input{includes/generazioni.tex}
+    \clearpage
+    \input{includes/autenticazione.tex}
+    \clearpage
+    \section{Vulnerablità dei meccanismi di autenticazione}
+    \section{Attacco Denial of Service}
+    \subsection{Descrizione}
+    \subsection{Utilizzo di dispositivi SIM-less}
+    \subsection{Potenzialità}
+    \section{Possibili soluzioni}
+    \section{Conclusioni}
 \end{document}

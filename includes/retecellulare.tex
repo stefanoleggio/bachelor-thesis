@@ -2,10 +2,34 @@
 \subsection{Definizione}
 La rete cellulare è la struttura \textit{hardware} e \textit{software} che consente il corretto
 funzionamento delle comunicazioni cellulari.
+Grazie alla loro capillarità, i vari gestori telefonici riescono a garantire il servizio per la 
+gran parte del territorio mondiale.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/att-coverage.png}
+    \caption{Mappa compertura AT\&T negli USA}
+\end{figure}\\
+La loro struttura e architettura ha subito notevoli cambiamenti nel corso degli anni, nelle prossime
+sezioni si analizzeranno gli elementi fondamentali di una rete cellulare che qualsiasi generazione possiede.
 \subsection{Infrastruttura}
 Per rendere possibile il collegamento di dispositivi in zone molto vaste vengono usati i ripetitori di segnale chiamati \textit{base station}. 
-Questi vengono
-disposti in modo capillare sul territorio, suddividendolo in diverse aree di competenza chiamate celle.
+Questi vengono disposti in modo capillare sul territorio, suddividendolo in diverse aree di competenza chiamate celle. Ognuna di queste può gestire
+un numero limitato di dispositivi in contemporanea, che chiameremo \textit{mobile station}, per questo, in caso di aree densamente popolate vengono 
+ridotte le aree di competenza di ciascuna antenna. Le celle quindi, possono avere una dimensione variabile che dipende dal contesto in cui devono essere inserite.
 %Immagine scacchiera cellulare
-In questo modo, un dispositivo per connettersi alla rete comunicherà con la \textit{base station} della
-propria zona.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/base-station.jpg}
+    \caption{Base station}
+\end{figure}
+Ogni cella ha un determinato raggio di azione determinato dalle caratteristiche fisiche dell'antenna stessa. Inoltre, 
+ha a disposizione un determinato range di frequenze su cui instaurare la comunicazione con i vari dispositivi, che solitamente
+sono differenti rispetto a quelle usate dalle celle vicine per evitare interferenze.
+Celle sufficientemente distanti possono utilizzare le stesse frequenze poiché non corrono il rischio di interferenza, questo rappresenta
+un grande vantaggio per questa tecnologia.
+\subsection{Architettura}
+L'architettura di una rete cellulare può essere risassunta con alcuni fondamentali componenti. La \textit{mobile sation} si connette all'antenna
+della zona di competenza ossia la \textit{base transceiver station}, quest'ultima quando riceve l'informazione la inoltra alla rispettiva \textit{base station controller}, ossia
+un componente che si occupa di raggruppare diverse \textit{base station}. 
+Diversi \textit{BSC} sono raggruppati nel \textit{mobile switching centre} \gls{msc}

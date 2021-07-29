@@ -1,6 +1,9 @@
-\documentclass{article}[12pt]
+\documentclass{article}
 \usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm, inner=3cm]{geometry}
 \usepackage{graphicx}
+\usepackage[acronym]{glossaries}
+\usepackage[italian]{babel}
+
 
 \def\blankpage{
     \clearpage
@@ -8,6 +11,9 @@
     \addtocounter{page}{-1}
     \null
     \clearpage}
+    
+\input{formats/acronyms.tex}
+\makenoidxglossaries
 
 \begin{document}
     \input{includes/titlepage.tex}
@@ -15,6 +21,9 @@
     \tableofcontents{}
     \clearpage
     \listoffigures
+    \clearpage
+    \printnoidxglossary[type=acronym, title={Abbreviazioni}]
+    \printacronyms
     \clearpage
     \input{includes/introduzione.tex}
     \clearpage

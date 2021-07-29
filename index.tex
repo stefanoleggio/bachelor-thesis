@@ -1,10 +1,18 @@
 \documentclass{article}
+
+%
+%   Packages
+%
 \usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm, inner=3cm]{geometry}
 \usepackage{graphicx}
+\usepackage{biblatex}
 \usepackage[acronym]{glossaries}
 \usepackage[italian]{babel}
+\usepackage{csquotes}
 
-
+%
+%   Utilities and costants
+%
 \def\blankpage{
     \clearpage
     \thispagestyle{empty}
@@ -12,9 +20,21 @@
     \null
     \clearpage}
     
+
+%
+%   Acronyms
+%
 \input{formats/acronyms.tex}
 \makenoidxglossaries
 
+%
+%   References
+%
+\addbibresource{formats/references.bib}
+
+%
+%   Document
+%
 \begin{document}
     \input{includes/titlepage.tex}
     \blankpage
@@ -34,10 +54,12 @@
     \input{includes/autenticazione.tex}
     \clearpage
     \section{Vulnerablità dei meccanismi di autenticazione}
-    \section{Attacco Denial of Service}
+    \section{Attacco Denial of Service\cite{1}}
     \subsection{Descrizione}
     \subsection{Utilizzo di dispositivi SIM-less}
     \subsection{Potenzialità}
     \section{Possibili soluzioni}
     \section{Conclusioni}
+    \clearpage
+    \printbibliography
 \end{document}

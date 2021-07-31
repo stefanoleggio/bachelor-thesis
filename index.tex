@@ -18,7 +18,8 @@
     \thispagestyle{empty}
     \addtocounter{page}{-1}
     \null
-    \clearpage}
+    \clearpage
+}
     
 
 %
@@ -42,7 +43,7 @@
     \clearpage
     \listoffigures
     \clearpage
-    \printnoidxglossary[type=acronym, title={Abbreviazioni}]
+    \printnoidxglossary[type=acronym, title={Elenco delle abbreviazioni}]
     \printacronyms
     \clearpage
     \input{includes/introduzione.tex}
@@ -51,15 +52,9 @@
     \clearpage
     \input{includes/generazioni.tex}
     \clearpage
-    \input{includes/autenticazione.tex}
+    \input{includes/dosidentificazione.tex}
     \clearpage
-    \section{Vulnerablità dei meccanismi di autenticazione}
-    \section{Attacco Denial of Service\cite{1}}
-    \subsection{Descrizione}
-    \subsection{Utilizzo di dispositivi SIM-less}
-    \subsection{Potenzialità}
-    \section{Possibili soluzioni}
-    \section{Conclusioni}
+    \input{includes/conclusioni.tex}
     \clearpage
     \printbibliography
 \end{document}

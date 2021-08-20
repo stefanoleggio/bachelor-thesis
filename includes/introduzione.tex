@@ -1,12 +1,23 @@
 \section{Introduzione}
 Le reti cellulari rappresentano un punto nevralgico per le nostre comunicazioni.
-Per questo, la loro sicurezza è fondamentale per garantire un normale Funzionamento
-di tutti i servizi a cui ormai abituati.
-In questa tesi si tratterà della loro struttura e funzionamento, analizzando le diverse
-tecnologie cellulari che con il tempo si sono susseguite. Dopodichè si procederà ad analizzare
-nel dettaglio i meccanismi di autenticazione dei dispositivi, mettendo in luce le rispettive vulnerabilità
-per le diverse tecnologie cellulari. Sfruttando delle vulnerabilità nel sistema di autenticazione si dimostrerà
-come un attacco di tipo Denial of Service sia possibile, spiegando le possibili disastrose conseguenze che 
-potrebbe comportare.
+Per questo, la loro sicurezza è fondamentale per garantire un normale funzionamento
+di tutti i servizi a cui ormai ci siamo abituati.\\
 \subsection{Struttura del documento}
+Il documento è strutturato in modo da fornire al lettore le competenze e terminologie adeguate per comprendere tutti i dettagli della 
+vulnerabilità scoperta.\\
+L'elaborato inizia con una breve panoramica sulla rete cellulare, descrivendo genericamente la sua struttura e architettura.\\ 
+Dato che le specifiche dell'architettura di una rete cellulare sono molto diverse a seconda della generazione, è stato 
+necessario illustrare l'evoluzione delle varie tecnologie: da 1G a 5G. 
+Per ogni generazione verranno illustratate prevalentemente le sue propietà architetturali oltre che le principali novità introdotte.
+Successivamente, verrà introdotta la tipologia dell'attacco trattato, ossia il \textit{Denial of Service}, spiegano in cosa consiste
+e come si applica alle reti cellulari. Inoltre, verranno illustrate le misurazioni necessarie per valutare l'efficienza di un attacco.\\
+Nel seguente capitolo, verranno analizzati nel dettaglio i sistemi di identificazione per le varie generazioni cellulari. Questo perchè è nel 
+loro funzionamento che sono preseti le vulnerabilità sfruttate per l'attacco.\\
+Successivamente, verrà trattato l'attacco di tipo \textit{Denial of Service} alle reti UMTS, spiegando il suo funzionamento e i risultati che sono stati
+ottenuti in \cite{umts-dos}.
+Infine, verrà discusso una potenziale replicazione in una architettura 5g. Inoltre, verranno evidenziate altre possibili vulnerabilità presenti in questa 
+ultima generazione.
 \subsection{Scopo della tesi}
+Questo elaborato si vuole occupare di analizzare l'attacco di tipo \textit{Denial of Service}
+alle reti UMTS illustrato in \cite{umts-dos} e scoprire se questo potrebbe risultare efficacie nelle ultime
+tecnologie cellulari 5g.

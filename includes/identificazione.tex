@@ -1,20 +1,18 @@
 \section{Sistema di identificazione}
 Il meccanismo di identificazione è la procedura per verificare che un determinato dispositivo
-è abilitato a connettersi alla rete. Il 5G apporta una modifica organica del suo funzionamento, per
-questo si è deciso di analizzare nelle successive sezioni solamente i meccanismi di autenticazione della rete
-UMTS e 5G.\\
-L'identificazione rappresenta un meccanismo molto vulnerabile ad attacchi di tipo \textit{Denial of Service} poichè, 
-in alcuni casi, si riesce a consumare delle onerose operazioni computazionali anche con dispositivi che non sono abilitati,
-quindi senza SIM.
+è abilitato a connettersi alla rete.
+Questo procedimento avviene tramite l'\textit{Authentication and key agreement} (AKA), procedimento in cui
+il \textit{core network} abilita un dispositivo a connettersi. 
+
 
 \subsection{2G}
 \subsection{3G}
-\subsection{4G}
-Il meccanismo presente nella rete UMTS è lo stesso usato nelle generazioni cellulari GSM, GPRS e EDGE. Inoltre, il 
-suo funzionamento è molto simile a quello delle reti LTE (4G), pertanto si è deciso di presentarlo solamente una volta.\\
+Con rete 3G si intendono l'insieme delle tecnologie di terza generazione, stiamo quindi parlando di un'architettura UMTS.
 Un \acrshort{ms} che si vuole collegare alla rete deve procedere con la fase di autenticazione o identificazione anche detta \textit{Authentication and key agreement}
 (AKA). In questa fase, viene interrogata la rispettiva HLR/AuC dove l'IMSI del dispositivo viene validato, se tutto procede correttamente
 viene notificato il SGSN che inoltra al \acrshort{ms} l'avviso di autenticazione completata.
 %Schema autenticazione umts
+
+\subsection{4G}
 
 \subsection{5G}

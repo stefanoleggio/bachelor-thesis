@@ -28,24 +28,43 @@ L'architettura di questa generazione è molto semplice, è composta da tre compo
 Si basava sulla \textit{frequency-division multiple access} (FDMA) in cui ogni dispositivo che si connetteva alla stazione radio
 aveva assegnata una specifica sotto banda\cite{generations}.
 
+\clearpage
+
 \subsection{2G}
+A differenza della prima generazione, la seconda introuduce per la prima volta una rete completamente digitale.
 La seconda generazione cellulare è composta da diverse versioni che si sono susseguite nel corso degli anni aggiungendo nuove 
 funzionalità.
-La sua architettura verrà poi usata come base per le versioni successive.\\
-Il MS si collega alla BTS di riferimento 
+Anche la sua architettura subisce delle modifiche, per questo verranno trattate in seguito.
+\subsubsection{GSM}
+Il GSM, ovvero \textit{Global System for Mobile Communications} è uno standard di seconda generazione che introuduce importanti novità.
+Le principali caratteristiche introdotte sono:
+\begin{itemize}
+    \item Maggiori velocità di trasmissione
+    \item Cifratura della comunicazione
+    \item Introduzione di nuovi servizi come gli SMS
+\end{itemize}
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/2g-gsm-gprs.png}
-    \caption{Architettura GSM e GPRS}
+    \includegraphics[width=0.7\textwidth]{images/2g-gsm.jpg}
+    \caption{Architettura GSM}
 \end{figure}
-\subsubsection{GSM}
-
-
+La sua architettura è composta da due macro aree: La BSS \textit{Base Station SubSystem} e la NSS \textit{Network SubSystem}.
+Il BSS è l'insieme delle antenne ricevitori, rappresentano il primo collegamento con il MS.\\
+Il MS si collega alla BS di riferimento, viene identificato tramite l'HLR \textit{Home Location Register}, ovvero un \textit{database} 
+che contiene tutte le informazioni necessarie per la gestione dei \textit{subscribers}. Le chiamate e messaggi vengono smistati nella rete 
+telefonica tramite il MSC \textit{Mobile Switching Centre}.
 \subsubsection{GPRS}
-
-
+La rete GPRS \textit{General Packet Radio Service} introduce per la prima volta un trasferimento dati a commutazione di pacchetto per rendere 
+possibile l'utilizzo dei servizi \textit{internet} con il proprio dispositivo cellulare.
+La sua architettura è la stessa di quella del GSM ma con dei componenti aggiuntivi che consentono la trasmissione dei pacchetti. 
+Per esempio, il SGSN \textit{Serving GPRS Support Node} è un componente predisposto per la gestione dei dispositivi connessi alla rete.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/2g-gprs.png}
+    \caption{Architettura GPRS}
+\end{figure}
 \subsubsection{EDGE}
-Evoluzione del GPRS che consente maggiori velocità.
+Evoluzione del GPRS che consente maggiori velocità, l'architettura resta invariata.
 
 \subsection{3G}
 \begin{figure}[ht]

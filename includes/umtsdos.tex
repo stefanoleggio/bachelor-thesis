@@ -1,6 +1,9 @@
 \section{Attacco alle reti UMTS}
 \subsection{Funzionamento}
-L'attacco in questione si concentra nel sistema di identificazione trattato nella sezione precedente, ovvero
-l'HLR. Infatti, questo componente viene spesso interrogato durante molte fasi della connessione del dispositivo,
- in particolare durante l'aggiornamento della posizione ovvero il cosidetto \textit{update location}.
+In \cite{umts-dos} è descritto un attacco di tipo \textit{Denial of Service} alle reti UMTS, in particolare al
+sistema di identificazione degli utenti. Infatti, la fase di AKA è la più delicata poichè dei dispositivi non ancora 
+autenticati sono in grado di forzare delle computazioni all'interno dell'architettura di sistema. 
+Come è stato spiegato precedentemente nella sezione riguardante l'identificazione nelle architetture 3G, per identificare un 
+dispositivo viene interpellata l'HLR che richiede all'AuC di validare l'IMSI del dispositivo. Questa operazione risulta molto dispendiosa
+di tempo 
 \subsection{Analisi dei risultati}

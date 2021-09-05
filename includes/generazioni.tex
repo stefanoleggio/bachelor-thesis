@@ -52,9 +52,9 @@ La sua architettura è composta da due macro aree: La BSS \textit{Base Station S
 Il BSS è l'insieme delle antenne ricevitori, rappresentano il primo collegamento con il MS.\\
 Il MS si collega alla BS di riferimento, viene identificato tramite l'HLR \textit{Home Location Register}, ovvero un \textit{database} 
 che contiene tutte le informazioni necessarie per la gestione dei \textit{subscribers}. Le chiamate e messaggi vengono smistati nella rete 
-telefonica tramite il MSC \textit{Mobile Switching Centre}.
+telefonica tramite il \textit{Mobile Switching Centre} (MSC).
 \subsubsection{GPRS}
-La rete GPRS \textit{General Packet Radio Service} introduce per la prima volta un trasferimento dati a commutazione di pacchetto per rendere 
+La rete \textit{General Packet Radio Service} (GPRS) introduce per la prima volta un trasferimento dati a commutazione di pacchetto per rendere 
 possibile l'utilizzo dei servizi \textit{internet} con il proprio dispositivo cellulare\cite{gsm-architecture}.
 La sua architettura è la stessa di quella del GSM ma con dei componenti aggiuntivi che consentono la trasmissione dei pacchetti. 
 Per esempio, il SGSN \textit{Serving GPRS Support Node} è un componente predisposto per la gestione dei dispositivi connessi alla rete.
@@ -69,20 +69,34 @@ Evoluzione del GPRS che consente maggiori velocità, l'architettura resta invari
 \clearpage
 
 \subsection{3G}
+L'architectura della terza generazione riprende quella già vista nella seconda. Infatti, questa generazione ha avuto come principale obbiettivo 
+quello di consolidare l'integrazione della rete internet nei sistemi cellulari ed aumentare le velocità di trasmissione per consentire l'utilizzo 
+di nuovi servizi.
+Le reti di terza generazione possono essere divise in tre componenti fondamentali:
+\begin{itemize}
+    \item UE \textit{User equipment}
+    \item RNS \textit{Radio Network Subsystem}
+    \item \textit{Core Network}
+\end{itemize}
+
+\subsubsection{UMTS}
+L'UMTS ovvero \textit{Universal Mobile Telecommunications System} è il primo standard di terza generazione.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{images/3g-umts.png}
     \caption{Architettura UMTS}
 \end{figure}
 
-\subsubsection{UMTS}
-
 
 \subsubsection{HSPA/HSPA+}
+Evoluzione del UMTS per consentire velocità maggiori apportando modifiche nella trasmissione del segnale.
+Con questo nuovo standard si riescono a raggiungere velocità di 42 Mb/s.
 
 \clearpage
 
 \subsection{4G}
+
+\subsubsection{LTE}
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{images/4g-lte.jpg}
@@ -92,8 +106,22 @@ Evoluzione del GPRS che consente maggiori velocità, l'architettura resta invari
 \clearpage
 
 \subsection{5G}
+Lo standard di quinta generazione implementa una architettura completamente diversa rispetto alle precedenti definita come 
+\textit{Service-Base Architecture} (BSA).
+La BSA consiste nel dividere tutte le funzioni in una serie di \textit{microservices}\cite{5g-approach}. 
+Questa nuova struttura è stata introdotta per garantire la scalabilità del sistema, migliorare le prestazioni (velocità) e per 
+permettere di realizzare il \textit{massive IOT}, che richiede la gestione simultanea di molti dispositivi.\\
+I principali blocchi che la compongono sono:
+\begin{itemize}
+    \item AMF \textit{Core Access and Mobility Management Function} responsabile dell'autenticazione e autenticazione del dispositivo.
+    \item SMF \textit{Sesson Management Function} per la gestione della sessione di ogni UE.
+    \item PCF\textit{Policy Control Function}
+    \item UDM
+    \item AUSF
+\end{itemize}
+
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/5g.png}
-    \caption{Architettura 5G}
+    \includegraphics[width=0.8\textwidth]{images/5g-planes.png}
+    \caption{Architettura 5G\cite{5g-approach}}
 \end{figure}

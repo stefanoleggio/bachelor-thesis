@@ -42,6 +42,8 @@ E' la tipologia di vulnerabilità che è stata scelta per confrontare la sicurez
 Il suo funzionamento si basa sull'esasperare di richieste di autenticazione i sistemi identificativi delle reti cellulari, che solitamente 
 sono i componenti con più traffico della rete. Per esempio, nelle generazioni 2G e 3G, è la HLR che viene identificata come componente critico del
 sistema.\\
+Questa vulnerabilità si trova nel meccanismo di autenticazione dei dispositivi denominato \textit{Authentication and Key Agreement} (AKA) dove un dispositivo
+non autenticato forza delle computazioni all'interno del \textit{Core Network} che consumano più risorse della richiesta stessa\cite{umts-dos}.
 Ad aumentare la pericolosità di questa vulnerabilità è la possibilità di creare computazioni nel \textit{Core Network} senza essere effettivamente autenticati, e quindi 
 senza disporre di una SIM valida. Questa tipologia di attacchi, definiti come SIM-less, verranno presi come riferimento per sfruttare questa vulnerabilità come illustrato per le 
 reti GSM\cite{gsm-dos-simless} e UMTS\cite{umts-dos}.

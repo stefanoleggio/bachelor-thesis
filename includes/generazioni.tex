@@ -106,8 +106,12 @@ Con questo nuovo standard si riescono a raggiungere velocità di 42 Mb/s.
 \clearpage
 
 \subsection{5G}
-Lo standard di quinta generazione implementa una architettura completamente diversa rispetto alle precedenti definita come 
-\textit{Service-Base Architecture} (BSA).
+Il 5G, ovvero lo standard di quinta generazione rappresenta l'ultima frontiera della tecnologia cellulare.
+Il suo principale scopo è consentire l'\textit{Internet of Things} massivo, ossia un \textit{network} che sia 
+in grado di gestire la connessione di molti dispositivi con latenze molto piccole.
+Per consentire velocità fino a 10 Gb/s si sono
+dovute apportare importanti modifiche strutturali che rendono la sua architettura molto diversa da quelle viste fin'ora.\\
+L'architettura implementata prende il nome di \textit{Service-Base Architecture} (BSA).
 La BSA consiste nel dividere tutte le funzioni in una serie di \textit{microservices}\cite{5g-approach}. 
 Questa nuova struttura è stata introdotta per garantire la scalabilità del sistema, migliorare le prestazioni (velocità) e per 
 permettere di realizzare il \textit{massive IOT}, che richiede la gestione simultanea di molti dispositivi.\\
@@ -115,13 +119,35 @@ I principali blocchi che la compongono sono:
 \begin{itemize}
     \item AMF \textit{Core Access and Mobility Management Function} responsabile dell'autenticazione e autenticazione del dispositivo.
     \item SMF \textit{Sesson Management Function} per la gestione della sessione di ogni UE.
-    \item PCF\textit{Policy Control Function}
-    \item UDM
-    \item AUSF
+    \item PCF\textit{Policy Control Function} per la gestione delle \textit{policy}
+    \item UDM \textit{Unified Data Management} per la gestione dell'identità dell'utente, questo compito era precedentemente svolto da HSS o HLR.
+    \item AUSF \textit{Authentication Server Function} per effettuare l'autenticazione dell'utente.
+    \item SDSF \textit{Structured Data Storage Network Function} è un helper per la memorizzazione di dati strutturati.
+    \item UDSF \textit{Unstructured Data Storage Network Function} è un helper per la memorizzazione di dati non strutturati.
+    \item NEF \textit{Network Exposure Function} per esporre determinate funzionalità a servizi di terze parti.
+    \item NRF \textit{NF Repository Function} per scoprire tutti i servizi disponibili.
+    \item NSSF \textit{Network Slicing Selector Function} per selezionare una determinata partizione di \textit{network}.
+    \item UPF \textit{User Plane Function} trasporta il traffico dal RAN all'internet.
 \end{itemize}
-
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{images/5g-planes.png}
     \caption{Architettura 5G\cite{5g-approach}}
 \end{figure}
+
+\clearpage
+
+\subsubsection{Network Slicing}
+Il \textit{Network Slicing} rappresenta una delle caratteristiche più importanti del 5G. Con questo termine si intende il partizionamento della
+rete in diversi "piani" ciascuno con caratteristiche e requisiti particolari, indipendente e autonomo. Questo risulta fondamentale nella realizzazione 
+dell' IOT massivo, infatti in questo modo la gestione del traffico terrà conto dell'applicazione che viene utilizzata nel dispositivo per decidere quali prestazioni sono 
+richieste da quel dispositivo.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/5g-eg-of-use.png}
+    \caption{Esempi di applicazioni per il 5G}
+\end{figure}\\
+La realizzazione del \textit{Network Slicing} avviene tramite i \textit{Software Degined Network} che nella prossima sezione verranno approfonditi.
+\subsubsection{Software Defined Network}
+I \textit{Software Defined Network} (SDN) sono dei programmi per la virtualizzazione della rete. Sono necessari per interfacciarsi a livello applicativo con i dispositivi cellulari 
+in modo da gestire il traffico della rete in modo efficacie\cite{5g-sdn}.

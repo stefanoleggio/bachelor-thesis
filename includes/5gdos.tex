@@ -1,13 +1,15 @@
 \section{Attacco all'autenticazione delle reti 5G}
-Nel documento \cite{5g-dos} vengono sottolineate le potenziali vunerabilità del sistema 5G a un attacco 5G al suo meccanismo di autenticazione.
-Infatti, la centralizzazione del controllo del \textit{network} con un SDN e NFV crea le condizioni ottimali per effettuare un attacco DOS con successo.
-Inoltre, bisogna considerare che dato l'elevato numero di dispositivi connessi per garantire l'\textit{Internet of Things} alcuni di questi componenti centrali del \textit{network}
-sono già messi a dura prova.
-\subsection{}
+In questa sezione verranno trattate le problematiche riguardo un attacco di tipo \textit{Denial of Service} all'autenticazione delle reti 5G.
+Questa generazione ha risolto alcune delle probematiche legate all'autenticazione, come per esempio a differenza del 4G (LTE) l'identificatore 
+dello UE viene criptato con la chiave pubblica prima di essere inviato al \textit{Core network}, evitando così di poter essere intercettato e rubato\cite{5g-vs-4g}.
+Però, con il grande aumento di dispositivi connessi che questa tecnologia vuole incentivare, per esempio nel mondo dell' IOT, gli attacchi DOS saranno senz'altro più 
+semplici da realizzare.\\
+I SDN e NFV, componenti fondamentali per garantire le eccezionali prestazioni del 5G, potrebbero essere un efficace strumento di monitoraggio per identificare possibili 
+attacchi come spiegato in \cite{dos-detection-with-sdn}.
+Allo stesso tempo però, la centralizzazione del controllo del \textit{network} con un SDN e NFV crea le condizioni ottimali per effettuare un attacco DOS con successo\cite{5g-dos}.
 \subsection{Implementazione di una blockchain}
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{images/5g-blockchain-dos.png}
-    \caption{Autenticazione nelle reti 5G}
+    \caption{Prestazioni durante DOS della \textit{blockchain}\cite{5g-blockchain}}
 \end{figure}
-\cite{5g-blockchain}

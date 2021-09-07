@@ -1,38 +1,47 @@
 \section{Sistema di autenticazione}
-Il meccanismo di identificazione è la procedura per verificare che un determinato dispositivo
+Il meccanismo di autenticazione è la procedura per verificare che un determinato dispositivo
 è abilitato a connettersi alla rete.
-Questo procedimento avviene tramite l'\textit{Authentication and key agreement} (AKA), procedimento in cui
+Questo procedimento avviene tramite il riconoscimento dell'identificativo del cellulare (IMSI) e Successivamente
+avviene l'\textit{Authentication and key agreement} (AKA), procedimento in cui
 il \textit{core network} abilita un dispositivo a connettersi.\\
-Di seguito verranno illustrate le procedure di inteficazione per le principali generazioni cellulari: dal 2G al 5G. Il 
-1G è stato escluso poiché ha un funzionamento completamente analogico.
+In questo capitolo verranno trattati le procedure di autenticazione per le generazioni dal 2G al 5G, il 1G è stato escluso 
+poiché ha un funzionamento completamente analogico.
 
 \subsection{2G}
-Nei sisteni di seconda generazione nella fase di autenticazione di un dispositivo vengono interpellati principalmente tre componenti:
+Il sistema di autenticazione di seconda generazione utilizza principalmente due codici univoci della SIM e del MS:
+\begin{itemize}
+    \item IMSI ovvero un codice identificatvo della SIM
+    \item IMEI ovvero un codice identificativo del MS
+\end{itemize}
+Questi due codici saranno necessari anche per le prossime generazioni fino al 4G.\\
+La procedura di autenticazione di un MS segue questi passaggi:
 \begin{enumerate}
-    \item Il dispositivo cellulare con l'apposita SIM
-    \item Il MSC di riferimento
-    \item La HLR con l'AUC per effettuare la validazione
+    \item Il MS invia l'IMSI alla BTS di riferimento che lo inoltra al \textit{Core Network}, questo
+    avviene ogni volta che il MS vuole connettersi al \textit{network} e non risulta già risultato presso 
+    la rete di riferimento. In caso lo fosse, verrà utilizzato il TMSI \textit{Temporary MobileSubscriber Identity}
+    per preservare il suo anonimato.
+    \item L'AuC cerca la chiave Ki associata all'IMSI e insieme a un numero casuale RAND genera un codice SRES che verrà
+    salvato nel VLR.
+    \item Viene inviato al MS il RAND generato.
+    \item La stessa procedura viene fatta dal MS, che genera quindi il suo SRES e lo invia al VLR
+    \item Il VLR confronta se l'SRES ricevuto corrisponde a quello generato dall'AuC, se corrispondono l'autenticazione risulta
+    effettuata con successo e viene generato,salvato e inviato il TMSI.
 \end{enumerate}
+
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{images/auth-2g.png}
-    \caption{Identificazione nelle reti 2G}
+    \caption{Autenticazione nelle reti 2G}
 \end{figure}
-Per autenticare un dispositivo vengono generati i vettori di autenticazione nell'AUC, univochi rispetto a un determinato dispositivo identificato da 
-un IMSI. Questi vettori poi vengono inviati all'HLR che si occuperà do verificarne la correttezza e inviare una risposta al MSC che la inoltra al MS.
 
 \clearpage
 
 \subsection{3G}
-Nei sistemi di terza generazione i componenti utilizzati per l'identificazione di un dispositivo sono gli stessi della generazione precedente salvo qualche 
-eccezione. Come illustrato precedentemente, come nel GPRS nelle reti 3G ci sono due \textit{Switcing centre}: MSC per il classico circuito telefonico e il GMSC per 
-i pacchetti di rete. L'identificazione viene completata allo stesso modo della seconda generazione, ma 
-
-Con rete 3G si intendono l'insieme delle tecnologie di terza generazione, stiamo quindi parlando di un'architettura UMTS.
-Un \acrshort{ms} che si vuole collegare alla rete deve procedere con la fase di autenticazione o identificazione anche detta \textit{Authentication and key agreement}
-(AKA). In questa fase, viene interrogata la rispettiva HLR/AuC dove l'IMSI del dispositivo viene validato, se tutto procede correttamente
-viene notificato il SGSN che inoltra al \acrshort{ms} l'avviso di autenticazione completata.
-%Schema autenticazione umts
+L'autenticazione nell'architettura di terza generazione è molto simile a quella precedente salvo i seguenti miglioramenti:
+\begin{itemize}
+    \item Viene introdotta l'autenticazione mutua per prevenire l'autenticazione a false \textit{Base stations}.
+    \item La lunghezza della chiave Ki viene incrementata da 64 a 128 bit.
+\end{itemize}
 
 \clearpage
 
@@ -42,6 +51,7 @@ viene notificato il SGSN che inoltra al \acrshort{ms} l'avviso di autenticazione
     \includegraphics[width=0.8\textwidth]{images/auth-4g.png}
     \caption{Autenticazione nelle reti 4G}
 \end{figure}
+
 \clearpage
 
 \subsection{5G}

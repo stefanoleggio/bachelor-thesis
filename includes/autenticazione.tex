@@ -4,7 +4,7 @@ Il meccanismo di autenticazione è la procedura per verificare che un determinat
 Questo procedimento avviene tramite il riconoscimento dell'identificativo del cellulare (IMSI) e Successivamente
 avviene l'\textit{Authentication and key agreement} (AKA), procedimento in cui
 il \textit{core network} abilita un dispositivo a connettersi.\\
-In questo capitolo verranno trattati le procedure di autenticazione per le generazioni dal 2G al 5G, il 1G è stato escluso 
+In questo capitolo verranno trattati le procedure di autenticazione\cite{identifications} per le generazioni dal 2G al 5G, il 1G è stato escluso 
 poiché ha un funzionamento completamente analogico.
 
 \subsection{2G}
@@ -44,7 +44,7 @@ L'autenticazione nell'architettura di terza generazione e quarta è molto simile
     \item La lunghezza della chiave Ki viene incrementata da 64 a 128 bit.
     \item Viene implementato un flag per verificare se le comunicazioni vengono compromesse durante la trasmissione chiamato \textit{Integrity Key} (IK).
 \end{itemize}
-Il procedimento di autenticazione è il seguente:
+Il procedimento di autenticazione è il seguente\cite{4g-auth}:
 \begin{enumerate}
     \item Il MS invia l'IMSI alla BTS di riferimento che lo inoltra al \textit{Core Network}
     \item L'AuC cerca la chiave Ki associata all'IMSI e insieme a un numero casuale RAND genera un codice SRES che verrà
@@ -72,14 +72,14 @@ Sono definiti tre protocolli di autenticazione:
     \item EAP-AKA: Extensible Authentication Protocol – Authentication and Key Management
     \item EAP-TLS: Extensible Authentication Protocol – Transport Layer Security
 \end{itemize}
-Rispetto alle generazioni precedenti ci sono stati i seguenti miglioramenti di sicurezza:
+Rispetto alle generazioni precedenti ci sono stati i seguenti miglioramenti di sicurezza\cite{5g-vs-4g}:
 \begin{itemize}
     \item L'IMSI non viene mai comunicato in chiaro ma sempre criptato
     \item I componenti del \textit{network} coinvolti sono dei servizi
 \end{itemize}
 L'autenticazione è fondamentalmente diviso in due parti: La prima è l'inizializzazione dell'autenticazione e la scelta del metodo di autenticazione.
 La seconda è invece l'autenticazione mutua come avviene nelle generazioni precedenti.
-Lo schema di autenticazione è il seguente:
+Lo schema di autenticazione è il seguente\cite{5g-auth}:
 \begin{enumerate}
     \item Il MS invia il SUCI o 5G-GUTI alla BTS di riferimento che lo inoltra al AMF/SEAF
     il GUTI è un identificativo temporaneo simile al TMSI delle generazioni precedenti, invece il SUCI è un identificatore criptato

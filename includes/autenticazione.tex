@@ -28,7 +28,7 @@ La procedura di autenticazione di un MS segue questi passaggi:
     effettuata con successo e viene generato,salvato e inviato il TMSI.
 \end{enumerate}
 
-\begin{figure}[ht]
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.7\textwidth]{images/auth-2g.png}
     \caption{Autenticazione nelle reti 2G}
@@ -41,12 +41,30 @@ L'autenticazione nell'architettura di terza generazione è molto simile a quella
 \begin{itemize}
     \item Viene introdotta l'autenticazione mutua per prevenire l'autenticazione a false \textit{Base stations}.
     \item La lunghezza della chiave Ki viene incrementata da 64 a 128 bit.
+    \item Viene implementato un flag per verificare se le comunicazioni vengono compromesse durante la trasmissione chiamato \textit{Integrity Key} (IK).
 \end{itemize}
+Il procedimento di autenticazione è il seguente:
+\begin{enumerate}
+    \item Il MS invia l'IMSI alla BTS di riferimento che lo inoltra al \textit{Core Network}
+    \item L'AuC cerca la chiave Ki associata all'IMSI e insieme a un numero casuale RAND genera un codice SRES che verrà
+    salvato nel VLR.
+    \item VIene trovata la chiave Ki corrispondente all'IMSI dall'AuC, dopodichè viene generato un codice SRES con l'utilizzo di un numero randomico RAND.
+    Inoltre, viene generato un codice AUTN per permettere al MS di autenticare il \textit{network}.
+    \item Viene inviato al MS il RAND e AUTN.
+    \item Il MS autentica il \textit{network} confrontando il valore di AUTN ricevuto. Se il \textit{network} è valido, prosegue con la generazione del SRES.
+    \item Il VLR confronta se l'SRES ricevuto corrisponde a quello generato dall'AuC, se corrispondono l'autenticazione risulta
+    effettuata con successo e viene generato,salvato e inviato il TMSI.
+\end{enumerate}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/auth-3g.png}
+    \caption{Autenticazione nelle reti 3G}
+\end{figure}
 
 \clearpage
 
 \subsection{4G}
-\begin{figure}[ht]
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{images/auth-4g.png}
     \caption{Autenticazione nelle reti 4G}
@@ -56,7 +74,7 @@ L'autenticazione nell'architettura di terza generazione è molto simile a quella
 
 \subsection{5G}
 
-\begin{figure}[ht]
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{images/auth-5g.png}
     \caption{Autenticazione nelle reti 5G}

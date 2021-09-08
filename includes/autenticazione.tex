@@ -59,13 +59,40 @@ Il procedimento di autenticazione è il seguente:
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.7\textwidth]{images/auth-3g.png}
-    \caption{Autenticazione nelle reti 3G}
+    \caption{Autenticazione nelle reti 3G e 4G}
 \end{figure}
 
 \clearpage
 
 \subsection{5G}
-
+L'autenticazione della generazione 5G è molto diversa dalle precedenti poichè, come illustrato nella sezione (?), l'architettura è completamente rivista diventando una ramificazione di microservizi.
+Sono definiti tre protocolli di autenticazione:
+\begin{itemize}
+    \item 5G-AKA: 5G-Authentication and Key Management
+    \item EAP-AKA: Extensible Authentication Protocol – Authentication and Key Management
+    \item EAP-TLS: Extensible Authentication Protocol – Transport Layer Security
+\end{itemize}
+Rispetto alle generazioni precedenti ci sono stati i seguenti miglioramenti di sicurezza:
+\begin{itemize}
+    \item L'IMSI non viene mai comunicato in chiaro ma sempre criptato
+    \item I componenti del \textit{network} coinvolti sono dei servizi
+\end{itemize}
+L'autenticazione è fondamentalmente diviso in due parti: La prima è l'inizializzazione dell'autenticazione e la scelta del metodo di autenticazione.
+La seconda è invece l'autenticazione mutua come avviene nelle generazioni precedenti.
+Lo schema di autenticazione è il seguente:
+\begin{enumerate}
+    \item Il MS invia il SUCI o 5G-GUTI alla BTS di riferimento che lo inoltra al AMF/SEAF
+    il GUTI è un identificativo temporaneo simile al TMSI delle generazioni precedenti, invece il SUCI è un identificatore criptato
+    permanente.
+    \item il SEAF manda l'identificatore del dispositivo (SUCI o 5G-GUTI) e il \textit{Serving Network Name} (SNN) all'AUSF.
+    Il SNN è una concatenazione di codici identificativi di servizi e il codice identificativo del \textit{Serving Network}.
+    \item L'AUSF controlla che la richiesta dal SEAF sia autorizzata a utilizzare il SNN, in caso non lo fosse risponde con un 
+    apposito messaggio di errore.
+    \item L'AUSF reperisce la chiave associata all'identificativo nell'archivio UDM e genera il rispettivo SRES con un numero randomico RAND.
+    \item Viene inviato all'MS il RAND e AUTN (per l'autenticazione mutua).
+    \item Il MS procede con la creazione del SRES e lo invia al SEAF.
+    \item Il SEAF inoltra il SERS all'AUSF che si occupa di controllare se corrispondono e in caso confermare l'autenticazione.
+\end{enumerate}
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{images/auth-5g.png}

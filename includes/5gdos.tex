@@ -7,9 +7,18 @@ semplici da realizzare.\\
 I SDN e NFV, componenti fondamentali per garantire le eccezionali prestazioni del 5G, potrebbero essere un efficace strumento di monitoraggio per identificare possibili 
 attacchi come spiegato in \cite{dos-detection-with-sdn}.\\
 Allo stesso tempo però, la centralizzazione del controllo del \textit{network} con un SDN e NFV crea le condizioni ottimali per effettuare un attacco DOS con successo\cite{5g-dos}.
-\subsection{Replicazione di un attacco SIM-less}
+
+\subsection{IMSI \textit{catching}}
+\cite{suci-catch}
+
+\subsection{Replicazione dell'attacco SIM-less}
 Alla base degli attacchi trattati nella sezione 6.3 vi è la costruzione di un \textit{database} di IMSI. Questo database può essere agevolmente costruito nelle generazioni precedenti al 5G 
-tramite le tecniche di IMSI \textit{catching} trattate in 6.2. Nel 5G risulta molto più difficile creare un archivio di IMSI poichè questi viaggiano in forma criptata nella rete ovvero il SUCI.
+tramite le tecniche di IMSI \textit{catching} trattate in 6.2. Nel 5G risulta molto più difficile creare un archivio di IMSI poichè questi viaggiano in forma criptata nella rete ovvero il SUCI.\\
+Tuttavia, se si riuscisse a ottenere comunque un \textit{database} di IMSI rubati si potrebbe ottenere un attacco dello stesso tipo di \cite{gsm-dos-simless} e \cite{umts-dos} con prestazioni migliori 
+perchè il nuovo protocollo 5G NR\cite{5g-nr} per l'\textit{air interface} è stato progettato per supportare il \textit{Massive Machine Type Communications} ovvero l'IOT massivo che richiede latenze molto basse e capacità molto alte.
+Per questo, sicuramente la capacità dei canali di comunicazione durante la procedura di autenticazione avrebero un valore di TPS molto alto, sufficiente a causare un notevole degradamento delle prestazioni.
+
+\clearpage
 
 \subsection{Possibili soluzioni}
 \subsubsection{Lightweight authentication}

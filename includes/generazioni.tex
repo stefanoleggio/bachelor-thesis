@@ -1,6 +1,6 @@
 \section{Generazioni cellulari}
 Nel corso degli anni, si sono susseguite diverse generazioni di tecnologie cellulari, che hanno apportato
-notevoli cambiamenti alla loro architettura. Di seguito verranno presentati le principali caratteristiche
+notevoli cambiamenti alla loro architettura e infrastruttura per consentire il raggiungimento di prestazioni migliori\cite{architecture-evolution}. Di seguito verranno presentati le principali caratteristiche
 delle diverse generazioni cellulari, in modo tale da rendere di facile comprensione l'analisi dei meccanismi
 di identificazione che verranno approfonditi nelle prossime sezioni.\\
 Oltre ad elencare le principali caratteristiche di ogni generazione verranno analizzate nel dettaglio le specifiche  
@@ -36,7 +36,7 @@ La seconda generazione cellulare è composta da diverse versioni che si sono sus
 funzionalità.
 Anche la sua architettura subisce delle modifiche, per questo verranno trattate in seguito.
 \subsubsection{GSM}
-Il GSM, ovvero \textit{Global System for Mobile Communications}\cite{gsm} è uno standard di seconda generazione che introuduce importanti novità.
+Il GSM, ovvero \textit{Global System for Mobile Communications}\cite{gsm} è uno standard di seconda generazione che introuduce importanti novità.\\
 Le principali caratteristiche introdotte sono:
 \begin{itemize}
     \item Maggiori velocità di trasmissione
@@ -49,10 +49,21 @@ Le principali caratteristiche introdotte sono:
     \caption{Architettura GSM}
 \end{figure}
 La sua architettura è composta da due macro aree: La BSS \textit{Base Station SubSystem} e la NSS \textit{Network SubSystem}.
-Il BSS è l'insieme delle antenne ricevitori, rappresentano il primo collegamento con il MS.\\
-Il MS si collega alla BS di riferimento, viene identificato tramite l'HLR \textit{Home Location Register}, ovvero un \textit{database} 
-che contiene tutte le informazioni necessarie per la gestione dei \textit{subscribers}. Le chiamate e messaggi vengono smistati nella rete 
-telefonica tramite il \textit{Mobile Switching Centre} (MSC).
+Il BSS è l'insieme delle antenne ricevitori che rappresentano il primo collegamento con il MS, mentre il NSS rappresenta il \textit{core network} del GSM.\\
+Il NSS è formato dai seguenti componenti:
+\begin{itemize}
+    \item \textit{Mobile Switching Centre} (MSC) è l'elemento centrale dell'atchitettura GSM, si occupa di interfacciare i BTS con la rete telefonica PTSN.
+    \item \textit{Home Location Register} (HLR) \textit{database} centrale che contiene informazioni inerenti a tutti i \textit{subscribers}, molti delle informazioni
+    che contiene sono dei puntatori agli archivi seguenti.
+    \item \textit{Visitor Location Register} (VLR) \textit{database} che memorizza la posizione degli utenti.
+    \item \textit{Equipment Identity Register} (EIR) \textit{database} di identificazione degli IMEI dei dispositivi. Gli MS chesi collegano possono 
+    essere classificati dentro l'EIR come \textit{black}, ossia come dispositivo non autorizzato a connettersi. In questo caso quindi non si procede 
+    con l'autenticazione.
+    \item \textit{Authenticaton Center} (AuC) \textit{database} di informazioni di sicurezza associate agli utenti registrati.
+\end{itemize}
+
+\clearpage
+
 \subsubsection{GPRS}
 La rete \textit{General Packet Radio Service} (GPRS)\cite{gprs-edge} introduce per la prima volta un trasferimento dati a commutazione di pacchetto per rendere 
 possibile l'utilizzo dei servizi \textit{internet} con il proprio dispositivo cellulare\cite{gsm-architecture}.
@@ -90,7 +101,7 @@ L'UMTS ovvero \textit{Universal Mobile Telecommunications System}\cite{umts} è 
 
 \subsubsection{HSPA/HSPA+}
 Evoluzione del UMTS per consentire velocità maggiori apportando modifiche nella trasmissione del segnale.
-Con questo nuovo standard si riescono a raggiungere velocità di 42 Mb/s.
+Con questo nuovo standard si riescono a raggiungere velocità di 42 Mb/s\cite{hspa}.
 
 \clearpage
 

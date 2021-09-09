@@ -1,4 +1,4 @@
-\section{Attacco all'autenticazione delle reti 2G-4G}
+\chapter{Attacco all'autenticazione delle reti 2G-4G}
 Le reti cellulari dal 2G al 4G condividono lo stesso schema architetturale generale, per questo gran parte delle vulnerabilità che vengono
 utilizzate negli attacchi di tipo \textit{Denial of Service} sono comuni.
 Ci sono numerosi modi per effettuare un attacco DOS all'autenticazione già accennati nella sezione 4.1, in questo capitolo verranno messe in pratica 
@@ -15,7 +15,7 @@ Quindi, è chiaro che per effettuare un DOS al sistema di autenticazione degli u
 in primo luogo controllata dalla presenza di un \textit{International Mobile Subscriber Identity } (IMSI) valido.
 Di seguito verranno trattate le principali metodologie per effettuare un DOS al sistema di autenticazione.
 
-\subsection{Botnet}
+\section{Botnet}
 Il metodo più conosciuto per creare un \textit{Denial of Service} a una rete cellulare è tramite una \textit{botnet}.
 In questo modo, l'attaccante ha a disposizione un elevato numero di dispositivi con SIM valida che hanno la possibilità di effettuare massivamente una procedura
 di autenticazione causando delle dispendiose computazioni all'interno del \textit{network}.\\
@@ -27,7 +27,7 @@ appartenere alla stessa zona di competenza della HLR.\\
 
 \clearpage
 
-\subsection{IMSI \textit{catching}}
+\section{IMSI \textit{catching}}
 Un metodo alternativo all'utilizzo di una \textit{botnet} è avere a disposizione un \textit{database} di IMSI rubati per effettuare un \textit{flooding} di richieste di autenticazione.\\
 Dato che nelle reti 2G-4G l'IMSI viene trasmesso in chiaro al momento dell'autenticazione, in \cite{imsi-catcher} vengono citati i modi più comuni per appropriarsene per poi utilizzarli in un 
 attacco.
@@ -52,12 +52,12 @@ la VLR e il MS risponderà con il proprio IMSI in chiaro.
 
 \clearpage
 
-\subsection{Attacco alle reti con dispositivi SIM-less}
+\section{Attacco alle reti con dispositivi SIM-less}
 In \cite{umts-dos} e \cite{gsm-dos-simless} sono descritti degli attacchi all'autenticazione degli utenti utilizzando dispositivi senza una SIM commerciale, ma bensì delle interfacce di comunicazione 
 programmate per questo specifico scopo. Questo è stato fatto perchè utilizzare dei MS come dispositivi per effettuare un attacco DOS rappresenta un fattore limitante in termini di prestazioni. Infatti, 
 i sistemi operativi degli MS impongono degli intervalli di tempo fra una richiesta e un'altra.\\
 Entrambi gli attacchi dimostrano che è possibile causare un DOS con un numero di dispositivi senza SIM molto minore rispetto allo stato dell'arte. 
-\subsubsection{GSM}
+\subsection{GSM}
 E' stato necessario analizzare la rispettiva \textit{air interface} del GSM per valutare quale è il numero massimo di richieste di autenticazione 
 che possono essere inviate al secondo a una \textit{base station}. Questa misurazione risulta di fondamentale importanza poichè riesce anche a fornire il numero necessario 
 di dispositivi per raggiungere il massimo delle \textit{transation per second} (TPS).
@@ -70,7 +70,7 @@ Nell'immagine seguente vengono illustrati i messaggi e i canali in cui viaggiano
 
 \clearpage
 
-\subsubsection{UMTS}
+\subsection{UMTS}
 L'immagine seguente rappresenta un semplice schema del dispositivo con SIM programmabile per effettuare DOS a una rete UMTS\cite{umts-dos}.
 \begin{figure}[h]
     \centering

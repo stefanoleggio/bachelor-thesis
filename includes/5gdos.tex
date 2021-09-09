@@ -1,4 +1,4 @@
-\section{Attacco all'autenticazione delle reti 5G}
+\chapter{Attacco all'autenticazione delle reti 5G}
 In questa sezione verranno trattate le vulnerabilità riguardo un attacco di tipo \textit{Denial of Service} all'autenticazione delle reti 5G.
 Questa generazione ha risolto alcune delle probematiche legate all'autenticazione, come per esempio a differenza del 4G (LTE) l'identificatore 
 dello UE viene criptato con la chiave pubblica prima di essere inviato al \textit{Core network}, evitando così di poter essere intercettato e rubato\cite{5g-vs-4g}.
@@ -10,12 +10,7 @@ Allo stesso tempo però, la centralizzazione del controllo del \textit{network} 
 Questa tipologia di attacchi che ha lo scopo di creare unainterruzione del servizio hanno una pericolosià maggiore in questa generazione. Infatti, il mondo dell'IOT e le smart cities comprendono 
 dispositivi sensibili come per esempio il mondo della telemedicina.
 
-\subsection{Botnet}
-Le \textit{botnet} nel 5G possono creare degli attacchi DOS in maniera addirittura più semplice rispetto alle generazioni precedenti dato l'elevato traffico che viene generato normalmente.\\
-Tuttavia, in \cite{dos-detection-with-sdn} viene illustrato come il SDN del 5G può essere utilizzato per controllare a livello generale la rete, riuscendo così ad essere in grado, almeno teoricamente, 
-di rilevare e bloccare attacchi DDOS.
-
-\subsection{IMSI \textit{catching}}
+\section{IMSI \textit{catching}}
 Come anticipato, l'avanzamento più importante in termini di sicurezza che questa nuova generazione ha apportato è sicuramente la trasmissione dell'identificativo del MS o UE in forma 
 criptata. Questa innovazione ha reso molto più difficile la pratica dell'IMSI \textit{catching} trattata nella sezione (?) fondamentale per Successivamente effettuare un attacco DOS.\\
 Realisticamente però bisogna sottolineare che questa pratica non risulta completamente debellata. Infatti, tutte le nuove reti 5G, come è stato anche per le generazioni precedenti, devono 
@@ -29,14 +24,14 @@ una raccolta di identificativi per poi effettuare un attacco DOS poichè il SUCI
     \caption{Composizione del SUCI nel 5G}
 \end{figure}
 
-\subsection{Replicazione dell'attacco SIM-less}
+\section{Replicazione dell'attacco SIM-less}
 Alla base degli attacchi trattati nella sezione 6.3 vi è la costruzione di un \textit{database} di IMSI. Questo database può essere agevolmente costruito nelle generazioni precedenti al 5G 
 tramite le tecniche di IMSI \textit{catching} trattate in 6.2. Nel 5G risulta molto più difficile creare un archivio di IMSI poichè questi viaggiano in forma criptata nella rete ovvero il SUCI.\\
 Tuttavia, se si riuscisse a ottenere comunque un \textit{database} di IMSI rubati si potrebbe ottenere un attacco dello stesso tipo di \cite{gsm-dos-simless} e \cite{umts-dos} con prestazioni migliori 
 perchè il nuovo protocollo 5G NR\cite{5g-nr} per l'\textit{air interface} è stato progettato per supportare il \textit{Massive Machine Type Communications} ovvero l'IOT massivo che richiede latenze molto basse e capacità molto alte.
 Per questo, sicuramente la capacità dei canali di comunicazione durante la procedura di autenticazione avrebero un valore di TPS molto alto, sufficiente a causare un notevole degradamento delle prestazioni.
 
-\subsection{Nuove vulnerabilità}
+\section{Nuove vulnerabilità}
 L'implementazione del SUCI e SUPI ha risolto, o quantomeno reso molto più complicata la pratica dell'IMSI \textit{catching}. Allo stesso tempo però ha incrementato il dispendio di risorse durante l'autenticazione
 di un dispositivo. Come è chiaramente visibile nell'immagine sottostante, prima della generazione dei vettori di autenticazione vengono innestate delle procedure per decriptare il SUCI che avvengono con un algoritmo detto 
 \textit{Elliptic Curve Integrated Encryption Scheme} (ECIES). 

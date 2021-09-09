@@ -1,4 +1,4 @@
-\section{Sistema di autenticazione}
+\chapter{Sistema di autenticazione}
 Il meccanismo di autenticazione è la procedura per verificare che un determinato dispositivo
 è abilitato a connettersi alla rete.
 Questo procedimento avviene tramite il riconoscimento dell'identificativo del cellulare (IMSI) e Successivamente
@@ -7,7 +7,7 @@ il \textit{core network} abilita un dispositivo a connettersi.\\
 In questo capitolo verranno trattati le procedure di autenticazione\cite{identifications} per le generazioni dal 2G al 5G, il 1G è stato escluso 
 poiché ha un funzionamento completamente analogico.
 
-\subsection{2G}
+\section{2G}
 Il sistema di autenticazione di seconda generazione utilizza principalmente due codici univoci della SIM e del MS:
 \begin{itemize}
     \item IMSI ovvero un codice identificatvo della SIM
@@ -36,7 +36,7 @@ La procedura di autenticazione di un MS segue questi passaggi:
 
 \clearpage
 
-\subsection{3G}
+\section{3G-4G}
 L'autenticazione nell'architettura di terza generazione è molto simile a quella della seconda salvo i seguenti miglioramenti:
 \begin{itemize}
     \item Viene introdotta l'autenticazione mutua per prevenire l'autenticazione a false \textit{Base stations}.
@@ -63,12 +63,7 @@ Il procedimento di autenticazione è il seguente\cite{4g-auth}:
 
 \clearpage
 
-\subsection{4G}
-L'autenticazione nelle reti di quarta generazione è praticamente identica rispetto a quella precedente.
-
-\clearpage
-
-\subsection{5G}
+\section{5G}
 L'autenticazione della generazione 5G è molto diversa dalle precedenti poichè, come illustrato nella sezione (?), l'architettura è completamente rivista diventando una ramificazione di microservizi.
 Sono definiti tre protocolli di autenticazione:
 \begin{itemize}

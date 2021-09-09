@@ -1,11 +1,11 @@
-\documentclass{article}
+\documentclass{report}
 
 %
 %   Packages
 %
 \usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
 \usepackage{graphicx}
-\usepackage{biblatex}
+\usepackage[sorting=none]{biblatex}
 \usepackage[acronym]{glossaries}
 \usepackage[italian]{babel}
 \usepackage{csquotes}
@@ -38,6 +38,8 @@
 \begin{document}
     \input{includes/titlepage.tex}
     \blankpage
+    \input{includes/sommario.tex}
+    \clearpage
     \tableofcontents{}
     \clearpage
     \listoffigures

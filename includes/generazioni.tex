@@ -1,4 +1,4 @@
-\section{Generazioni cellulari}
+\chapter{Generazioni cellulari}
 Nel corso degli anni, si sono susseguite diverse generazioni di tecnologie cellulari, che hanno apportato
 notevoli cambiamenti alla loro architettura e infrastruttura per consentire il raggiungimento di prestazioni migliori\cite{architecture-evolution}. Di seguito verranno presentati le principali caratteristiche
 delle diverse generazioni cellulari, in modo tale da rendere di facile comprensione l'analisi dei meccanismi
@@ -11,7 +11,7 @@ dell'architettura di rete.
     \caption{Schema delle generazioni cellulari}
 \end{figure}
 
-\subsection{1G}
+\section{1G}
 La generazione 1G è uno dei primi standard di comunicazione cellulare. Il suo funzionamento era completamente analogico 
 e ormai è stata rimpiazzata totalmente dalle generazioni digitali successive.\\
 L'architettura di questa generazione è molto semplice, è composta da tre componenti principali:
@@ -30,7 +30,7 @@ aveva assegnata una specifica sotto banda\cite{generations}.
 
 \clearpage
 
-\subsection{2G}
+\section{2G}
 A differenza della prima generazione, la seconda introuduce per la prima volta una rete completamente digitale.
 La seconda generazione cellulare è composta da diverse versioni che si sono susseguite nel corso degli anni aggiungendo nuove 
 funzionalità.
@@ -64,7 +64,7 @@ Il NSS è formato dai seguenti componenti:
 
 \clearpage
 
-\subsubsection{GPRS}
+\subsection{GPRS}
 La rete \textit{General Packet Radio Service} (GPRS)\cite{gprs-edge} introduce per la prima volta un trasferimento dati a commutazione di pacchetto per rendere 
 possibile l'utilizzo dei servizi \textit{internet} con il proprio dispositivo cellulare\cite{gsm-architecture}.
 La sua architettura è la stessa di quella del GSM ma con dei componenti aggiuntivi che consentono la trasmissione dei pacchetti. 
@@ -74,12 +74,12 @@ Per esempio, il SGSN \textit{Serving GPRS Support Node} è un componente predisp
     \includegraphics[width=0.7\textwidth]{images/2g-gprs.png}
     \caption{Architettura GPRS}
 \end{figure}
-\subsubsection{EDGE}
+\subsection{EDGE}
 Evoluzione del GPRS che consente maggiori velocità, l'architettura resta invariata\cite{gprs-edge}.
 
 \clearpage
 
-\subsection{3G}
+\section{3G}
 L'architectura della terza generazione riprende quella già vista nella seconda. Infatti, questa generazione ha avuto come principale obbiettivo 
 quello di consolidare l'integrazione della rete internet nei sistemi cellulari ed aumentare le velocità di trasmissione per consentire l'utilizzo 
 di nuovi servizi.\\
@@ -90,7 +90,7 @@ Le reti di terza generazione possono essere divise in tre componenti fondamental
     \item \textit{Core Network}
 \end{itemize}
 
-\subsubsection{UMTS}
+\subsection{UMTS}
 L'UMTS ovvero \textit{Universal Mobile Telecommunications System}\cite{umts} è il primo standard di terza generazione.
 \begin{figure}[ht]
     \centering
@@ -99,15 +99,15 @@ L'UMTS ovvero \textit{Universal Mobile Telecommunications System}\cite{umts} è 
 \end{figure}
 
 
-\subsubsection{HSPA/HSPA+}
+\subsection{HSPA/HSPA+}
 Evoluzione del UMTS per consentire velocità maggiori apportando modifiche nella trasmissione del segnale.
 Con questo nuovo standard si riescono a raggiungere velocità di 42 Mb/s\cite{hspa}.
 
 \clearpage
 
-\subsection{4G}
+\section{4G}
 \cite{lte}
-\subsubsection{LTE}
+\subsection{LTE}
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{images/4g-lte.jpg}
@@ -116,7 +116,7 @@ Con questo nuovo standard si riescono a raggiungere velocità di 42 Mb/s\cite{hs
 
 \clearpage
 
-\subsection{5G}
+\section{5G}
 Il 5G, ovvero lo standard di quinta generazione rappresenta l'ultima frontiera della tecnologia cellulare.
 Il suo principale scopo è consentire l'\textit{Internet of Things} massivo, ossia un \textit{network} che sia 
 in grado di gestire la connessione di molti dispositivi con latenze molto piccole.
@@ -148,7 +148,7 @@ I principali blocchi che la compongono sono:
 
 \clearpage
 
-\subsubsection{Network Slicing}
+\subsection{Network Slicing}
 Il \textit{Network Slicing} rappresenta una delle caratteristiche più importanti del 5G. Con questo termine si intende il partizionamento della
 rete in diversi "piani" ciascuno con caratteristiche e requisiti particolari, indipendente e autonomo. Questo risulta fondamentale nella realizzazione 
 dell' IOT massivo, infatti in questo modo la gestione del traffico terrà conto dell'applicazione che viene utilizzata nel dispositivo per decidere quali prestazioni sono 
@@ -166,6 +166,7 @@ richieste delle prestazioni differenti, per esempio il settore delle \textit{cri
     \caption{\textit{Network slicing} nel 5G}
 \end{figure}\\
 La realizzazione del \textit{Network Slicing} avviene tramite i \textit{Software Degined Network} che nella prossima sezione verranno approfonditi.
-\subsubsection{\textit{Software Defined Network} e  \textit{Network Function Virtualization}}
+
+\subsection{\textit{Software Defined Network} e  \textit{Network Function Virtualization}}
 I \textit{Software Defined Network} (SDN) sono dei programmi per la virtualizzazione della rete. Sono necessari per interfacciarsi a livello applicativo con i dispositivi cellulari 
 in modo da gestire il traffico della rete in modo efficace\cite{5g-sdn}.

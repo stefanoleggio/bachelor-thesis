@@ -56,23 +56,35 @@ la VLR e il MS risponderà con il proprio IMSI in chiaro.
 In \cite{umts-dos} e \cite{gsm-dos-simless} sono descritti degli attacchi all'autenticazione degli utenti utilizzando dispositivi senza una SIM commerciale, ma bensì delle interfacce di comunicazione 
 programmate per questo specifico scopo. Questo è stato fatto perchè utilizzare dei MS come dispositivi per effettuare un attacco DOS rappresenta un fattore limitante in termini di prestazioni. Infatti, 
 i sistemi operativi degli MS impongono degli intervalli di tempo fra una richiesta e un'altra.\\
+Entrambi gli attacchi dimostrano che è possibile causare un DOS con un numero di dispositivi senza SIM molto minore rispetto allo stato dell'arte. 
+\subsubsection{GSM}
+E' stato necessario analizzare la rispettiva \textit{air interface} del GSM per valutare quale è il numero massimo di richieste di autenticazione 
+che possono essere inviate al secondo a una \textit{base station}. Questa misurazione risulta di fondamentale importanza poichè riesce anche a fornire il numero necessario 
+di dispositivi per raggiungere il massimo delle \textit{transation per second} (TPS).
+Nell'immagine seguente vengono illustrati i messaggi e i canali in cui viaggiano durante l'autenticazione alla rete GSM.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/gsm-air-channel.png}
+    \caption{Messaggi scambiati durante l'autenticazione in una rete GSM\cite{gsm-dos-simless}}
+\end{figure}
+
+\clearpage
+
+\subsubsection{UMTS}
 L'immagine seguente rappresenta un semplice schema del dispositivo con SIM programmabile per effettuare DOS a una rete UMTS\cite{umts-dos}.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{images/umts-dos-device.png}
     \caption{Dispositivo per l'attacco DOS alle reti UMTS\cite{umts-dos}}
 \end{figure}\\
-E' stato necessario analizzare la rispettiva \textit{air interface} di GSM e UMTS per valutare quale è il numero massimo di richieste di autenticazione 
-che possono essere inviate al secondo a una \textit{base station}. Questa misurazione risulta di fondamentale importanza poichè riesce anche a fornire il numero necessario 
-di dispositivi per raggiungere il massimo delle \textit{transation per second} (TPS).
+Come è stato fatto per la rete GSM, è stato necessario analizzare l'\textit{air interface} dell'UMTS per valutare il numero di TPS.
 Nell'immagine seguente vengono illustrati i messaggi e i canali in cui viaggiano durante l'autenticazione alla rete UMTS.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{images/umts-air-channel.png}
     \caption{Messaggi scambiati durante l'autenticazione in una rete UMTS\cite{umts-dos}}
 \end{figure}\\
-Entrambi gli attacchi dimostrano che è possibile effettuare un attacco DOS con successo disponendo di un numero di dispositivi relativamente basso rispetto a una \textit{botnet} di più di 11k di dispositivi.\\
-Nel dettaglio, nelle reti UMTS è stato calcolato che il limite più stringente di TPS durante la comunicazione con la \textit{base station} è dato dal canale FACH con 28 TPS.
-Questo, ha portato a concludere che bastano 446 dispositivi per effettuare una notevole degradazione del sistema.\\
+Nelle reti UMTS è stato calcolato che il limite più stringente di TPS durante la comunicazione con la \textit{base station} è dato dal canale FACH con 28 TPS.
+Questo, ha portato a concludere che bastano 446 dispositivi per effettuare una notevole degradazione del sistema, molti di meno rispetto agli 11K necessari per una \textit{botnet}\cite{dos-imsi}.\\
 Nello stesso articolo è spiegato come è possibile duplicare le prestazioni dell'attacco usando delle SIM valide. In questo modo infatti i vettori di autenticazione vengono generati una seconda volta se si segnala al
 \textit{network} che l'AUTN calcolato non risulta corretto.

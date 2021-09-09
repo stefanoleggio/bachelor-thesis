@@ -1,15 +1,33 @@
 \section{Attacco all'autenticazione delle reti 5G}
-In questa sezione verranno trattate le problematiche riguardo un attacco di tipo \textit{Denial of Service} all'autenticazione delle reti 5G.
+In questa sezione verranno trattate le vulnerabilità riguardo un attacco di tipo \textit{Denial of Service} all'autenticazione delle reti 5G.
 Questa generazione ha risolto alcune delle probematiche legate all'autenticazione, come per esempio a differenza del 4G (LTE) l'identificatore 
 dello UE viene criptato con la chiave pubblica prima di essere inviato al \textit{Core network}, evitando così di poter essere intercettato e rubato\cite{5g-vs-4g}.
 Però, con il grande aumento di dispositivi connessi che questa tecnologia vuole incentivare, per esempio nel mondo dell' IOT, gli attacchi DOS saranno senz'altro più 
 semplici da realizzare.\\
 I SDN e NFV, componenti fondamentali per garantire le eccezionali prestazioni del 5G, potrebbero essere un efficace strumento di monitoraggio per identificare possibili 
 attacchi come spiegato in \cite{dos-detection-with-sdn}.\\
-Allo stesso tempo però, la centralizzazione del controllo del \textit{network} con un SDN e NFV crea le condizioni ottimali per effettuare un attacco DOS con successo\cite{5g-dos}.
+Allo stesso tempo però, la centralizzazione del controllo del \textit{network} con un SDN e NFV crea le condizioni ottimali per effettuare un attacco DOS con successo\cite{5g-dos}.\\
+Questa tipologia di attacchi che ha lo scopo di creare unainterruzione del servizio hanno una pericolosià maggiore in questa generazione. Infatti, il mondo dell'IOT e le smart cities comprendono 
+dispositivi sensibili come per esempio il mondo della telemedicina.
+
+\subsection{Botnet}
+Le \textit{botnet} nel 5G possono creare degli attacchi DOS in maniera addirittura più semplice rispetto alle generazioni precedenti dato l'elevato traffico che viene generato normalmente.\\
+Tuttavia, in \cite{dos-detection-with-sdn} viene illustrato come il SDN del 5G può essere utilizzato per controllare a livello generale la rete, riuscendo così ad essere in grado, almeno teoricamente, 
+di rilevare e bloccare attacchi DDOS.
 
 \subsection{IMSI \textit{catching}}
-\cite{suci-catch}
+Come anticipato, l'avanzamento più importante in termini di sicurezza che questa nuova generazione ha apportato è sicuramente la trasmissione dell'identificativo del MS o UE in forma 
+criptata. Questa innovazione ha reso molto più difficile la pratica dell'IMSI \textit{catching} trattata nella sezione (?) fondamentale per Successivamente effettuare un attacco DOS.\\
+Realisticamente però bisogna sottolineare che questa pratica non risulta completamente debellata. Infatti, tutte le nuove reti 5G, come è stato anche per le generazioni precedenti, devono 
+essere retro compatibili, e quindi per un non determinato lasso di tempo devono essere supportate le procedure degli \textit{standard} precedenti che, come spiegato nel capitolo precedente, soffrono 
+di questa vulnerabilità.\\
+In \cite{suci-catch} viene illustrato un metodo per effettuare un attacco MITM nelle reti 5G in modo da ottenere l'IMSI criptato dell'utente: il SUCI. Questo metodo però non sarebbe applicabile per effettuare 
+una raccolta di identificativi per poi effettuare un attacco DOS poichè il SUCI viene rigenerato dopo ogni utilizzo.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/5g-suci.png}
+    \caption{Composizione del SUCI nel 5G}
+\end{figure}
 
 \subsection{Replicazione dell'attacco SIM-less}
 Alla base degli attacchi trattati nella sezione 6.3 vi è la costruzione di un \textit{database} di IMSI. Questo database può essere agevolmente costruito nelle generazioni precedenti al 5G 
@@ -18,17 +36,9 @@ Tuttavia, se si riuscisse a ottenere comunque un \textit{database} di IMSI rubat
 perchè il nuovo protocollo 5G NR\cite{5g-nr} per l'\textit{air interface} è stato progettato per supportare il \textit{Massive Machine Type Communications} ovvero l'IOT massivo che richiede latenze molto basse e capacità molto alte.
 Per questo, sicuramente la capacità dei canali di comunicazione durante la procedura di autenticazione avrebero un valore di TPS molto alto, sufficiente a causare un notevole degradamento delle prestazioni.
 
-\clearpage
-
-\subsection{Possibili soluzioni}
-\subsubsection{Lightweight authentication}
-\cite{5g-lightweight}
-\subsubsection{Blockchain}
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.8\textwidth]{images/5g-blockchain-dos.png}
-    \caption{Prestazioni durante DOS della \textit{blockchain}\cite{5g-blockchain}}
-\end{figure}
-
-%Subscription Concealed Identifier
-\cite{5g-imsi-encryption}
+\subsection{Nuove vulnerabilità}
+L'implementazione del SUCI e SUPI ha risolto, o quantomeno reso molto più complicata la pratica dell'IMSI \textit{catching}. Allo stesso tempo però ha incrementato il dispendio di risorse durante l'autenticazione
+di un dispositivo. Come è chiaramente visibile nell'immagine sottostante, prima della generazione dei vettori di autenticazione vengono innestate delle procedure per decriptare il SUCI che avvengono con un algoritmo detto 
+\textit{Elliptic Curve Integrated Encryption Scheme} (ECIES). 
+Questa procedura aumenta inevitabilmente la creazione di possibili DOS all'autentcazione. 
+In \cite{5g-lightweight} è descritto un protocollo che permetterebbe di controllare fin dal primo momento se il MS ha un SUCI valido senza incorrere nella decriptazione.

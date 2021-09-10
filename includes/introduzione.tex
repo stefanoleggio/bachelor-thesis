@@ -3,25 +3,25 @@ Le reti cellulari rappresentano un punto nevralgico per le nostre comunicazioni.
 Per questo, la loro sicurezza è fondamentale per garantire un normale funzionamento
 di tutti i servizi a cui ormai ci siamo abituati.\\
 La nuova tecnologia di quinta generazione è ormai vicina ad essere implementata su larga scala
-per permettere lo sviuluppo del mondo IOT \textit{Internet Of Things}. Questa nuova tecnologia stravolge numerosi
+per permettere lo sviuluppo del mondo dell'\textit{Internet Of Things}(IOT). Questa nuova tecnologia stravolge numerosi
 paradigmi strutturali che sono stati utilizzati fin'ora nelle generazioni precedenti, introducendo nuove sfide nell'ambito
 della loro sicurezza.
 \section{Struttura del documento}
-Il documento è strutturato in modo da fornire al lettore le competenze e terminologie adeguate per comprendere tutti i dettagli della 
-vulnerabilità scoperta.\\
+Il documento è strutturato in modo da fornire al lettore le competenze e terminologie adeguate per comprendere tutti i dettagli delle 
+vulnerabilità trattate.\\
 L'elaborato inizia con una breve panoramica sulla rete cellulare, descrivendo genericamente la sua struttura e architettura.\\ 
 Dato che le specifiche dell'architettura di una rete cellulare sono molto diverse a seconda della generazione, è stato 
 necessario illustrare l'evoluzione delle varie tecnologie: da 1G a 5G. 
-Per ogni generazione verranno illustratate prevalentemente le sue propietà architetturali oltre che le principali novità introdotte.
-Successivamente, verrà introdotta la tipologia dell'attacco trattato, ossia il \textit{Denial of Service}, spiegano in cosa consiste
+Per ogni generazione verranno illustratate prevalentemente le sue propietà architetturali oltre che le principali novità introdotte.\\
+Successivamente, verrà introdotta la tipologia dell'attacco trattato, ossia il \textit{Denial of Service}, spiegando in cosa consiste
 e come si applica alle reti cellulari. Inoltre, verranno illustrate le misurazioni necessarie per valutare l'efficienza di un attacco.\\
-Nel seguente capitolo, verranno analizzati nel dettaglio i sistemi di identificazione per le varie generazioni cellulari. Questo perchè è nel 
-loro funzionamento che sono preseti le vulnerabilità sfruttate per l'attacco.\\
-Successivamente, verrà trattato l'attacco di tipo \textit{Denial of Service} alle reti UMTS, spiegando il suo funzionamento e i risultati che sono stati
-ottenuti in \cite{umts-dos}.
-Infine, verrà discusso una potenziale replicazione in una architettura 5g. Inoltre, verranno evidenziate altre possibili vulnerabilità presenti in questa 
-ultima generazione.
+Tra le tante vulnerabilità che possono essere sfruttate per generare un \textit{denial of service}, questo documento si vuole soffermare sull'analisi 
+dell'attacco all'autenticazione.
+Per comprendere le vulnerabilità in questo ambito verranno analizzati nel dettaglio i sistemi di autenticazione per le varie generazioni cellulari.\\
+Nel capitolo seguente verranno introdotti gli attacchi all'autenticazione delle reti 2G-4G, spiegando il loro funzionamento di base e citando vari studi che 
+hanno permesso di quantificare la pericolosità di questi attacchi.\\
+Infine, verranno analizzati gli attacchi DOS alle reti 5G, specificando quali miglioramenti o peggioramenti sono stati introdotti dalla sua nuova architettura.
 \section{Scopo della tesi}
-Questo elaborato si vuole occupare di analizzare l'attacco di tipo \textit{Denial of Service}
-alle reti UMTS illustrato in \cite{umts-dos} e scoprire se questo potrebbe risultare efficacie nelle ultime
-tecnologie cellulari 5g.
+Questo elaborato vuole descrivere il funzionamento degli attacchi di tipo \textit{denial of service} alle reti cellulari, in particolare al meccanismo 
+di autenticazione degli utenti.\\
+Infine, si vuole scoprire se le vulnerabilità delle generazioni 3G-4G sono state risolte nel 5G.

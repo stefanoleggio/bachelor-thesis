@@ -1,8 +1,9 @@
 \chapter{Generazioni cellulari}
 Nel corso degli anni, si sono susseguite diverse generazioni di tecnologie cellulari, che hanno apportato
-notevoli cambiamenti alla loro architettura e infrastruttura per consentire il raggiungimento di prestazioni migliori\cite{architecture-evolution}. Di seguito verranno presentati le principali caratteristiche
+notevoli cambiamenti alla loro architettura e infrastruttura per consentire il raggiungimento di prestazioni migliori\cite{architecture-evolution}.\\
+Di seguito verranno presentati le principali caratteristiche
 delle diverse generazioni cellulari, in modo tale da rendere di facile comprensione l'analisi dei meccanismi
-di identificazione che verranno approfonditi nelle prossime sezioni.\\
+di autenticazione che verranno approfonditi nelle prossime sezioni.\\
 Oltre ad elencare le principali caratteristiche di ogni generazione verranno analizzate nel dettaglio le specifiche  
 dell'architettura di rete.
 \begin{figure}[ht]
@@ -34,9 +35,9 @@ aveva assegnata una specifica sotto banda\cite{generations}.
 
 \section{2G}
 A differenza della prima generazione, la seconda introuduce per la prima volta una rete completamente digitale.
-La seconda generazione cellulare è composta da diverse versioni che si sono susseguite nel corso degli anni aggiungendo nuove 
+Questa tecnologia cellulare è composta da diverse versioni che si sono susseguite nel corso degli anni aggiungendo nuove 
 funzionalità.
-Anche la sua architettura subisce delle modifiche, per questo verranno trattate in seguito.
+Anche la sua architettura subisce delle modifiche, per questo verranno trattate separatamente in seguito.
 \subsubsection{GSM}
 Il GSM, ovvero \textit{Global System for Mobile Communications}\cite{gsm} è uno standard di seconda generazione che introuduce importanti novità.\\
 Le principali caratteristiche introdotte sono:
@@ -55,11 +56,11 @@ Il BSS è l'insieme delle antenne ricevitori che rappresentano il primo collegam
 Il NSS è formato dai seguenti componenti:
 \begin{itemize}
     \item \textit{Mobile Switching Centre} (MSC) è l'elemento centrale dell'atchitettura GSM, si occupa di interfacciare i BTS con la rete telefonica PTSN.
-    \item \textit{Home Location Register} (HLR) \textit{database} centrale che contiene informazioni inerenti a tutti i \textit{subscribers}, molti delle informazioni
+    \item \textit{Home Location Register} (HLR) \textit{database} centrale che contiene informazioni inerenti a tutti i \textit{subscribers}, molte delle informazioni
     che contiene sono dei puntatori agli archivi seguenti.
     \item \textit{Visitor Location Register} (VLR) \textit{database} che memorizza la posizione degli utenti.
-    \item \textit{Equipment Identity Register} (EIR) \textit{database} di identificazione degli IMEI dei dispositivi. Gli MS chesi collegano possono 
-    essere classificati dentro l'EIR come \textit{black}, ossia come dispositivo non autorizzato a connettersi. In questo caso quindi non si procede 
+    \item \textit{Equipment Identity Register} (EIR) \textit{database} di identificazione degli IMEI dei dispositivi. Grazie a questo archivio è possibile creare delle \textit{blacklist}
+    per evitare l'accesso a determinati dispositivi.
     con l'autenticazione.
     \item \textit{Authenticaton Center} (AuC) \textit{database} di informazioni di sicurezza associate agli utenti registrati.
 \end{itemize}
@@ -70,7 +71,7 @@ Il NSS è formato dai seguenti componenti:
 La rete \textit{General Packet Radio Service} (GPRS)\cite{gprs-edge} introduce per la prima volta un trasferimento dati a commutazione di pacchetto per rendere 
 possibile l'utilizzo dei servizi \textit{internet} con il proprio dispositivo cellulare\cite{gsm-architecture}.
 La sua architettura è la stessa di quella del GSM ma con dei componenti aggiuntivi che consentono la trasmissione dei pacchetti. 
-Per esempio, il SGSN \textit{Serving GPRS Support Node} è un componente predisposto per la gestione dei dispositivi connessi alla rete.
+Per esempio, il \textit{Serving GPRS Support Node} (SGSN) è un componente per la gestione dei dispositivi connessi alla rete.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{images/2g-gprs.png}
@@ -82,18 +83,19 @@ Evoluzione del GPRS che consente maggiori velocità, l'architettura resta invari
 \clearpage
 
 \section{3G}
-L'architectura della terza generazione riprende quella già vista nella seconda. Infatti, questa generazione ha avuto come principale obbiettivo 
-quello di consolidare l'integrazione della rete internet nei sistemi cellulari ed aumentare le velocità di trasmissione per consentire l'utilizzo 
+L'architettura della terza generazione riprende quella già vista nella seconda. Infatti, questa generazione ha avuto come principale obbiettivo 
+quello di consolidare l'integrazione della rete internet nei sistemi cellulari ed aumentare la velocità di trasmissione per consentire l'utilizzo 
 di nuovi servizi.\\
-Le reti di terza generazione possono essere divise in tre componenti fondamentali:
-\begin{itemize}
-    \item UE \textit{User equipment}
-    \item RNS \textit{Radio Network Subsystem}
-    \item \textit{Core Network}
-\end{itemize}
+L'accesso al canale radio avviene con la tecnologia \textit{Wideband Code Division Multiple Access} (W-DCMA) con canale di banda 5 MHz.
 
 \subsection{UMTS}
 L'UMTS ovvero \textit{Universal Mobile Telecommunications System}\cite{umts} è il primo standard di terza generazione.
+La sua architettura è composta dai seguenti elementi principali:
+\begin{itemize}
+    \item \textit{Mobile Switching Centre}, componente che ha la stessa funzione di quello in 2G, questa volta il VLR è integrato al suo interno.
+    \item HLR/AuC e EIR
+    \item SGSN e GGSN componenti ripresi dalla rete GPRS per la commutazione a pacchetto.
+\end{itemize}
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{images/3g-umts.png}
@@ -108,8 +110,21 @@ Con questo nuovo standard si riescono a raggiungere velocità di 42 Mb/s\cite{hs
 \clearpage
 
 \section{4G}
-\cite{lte}
+La quarta generazione è al momento quella più utilizzata, permette di avere dei servizi basati su velocità molto alte. 
+A differenza delle precedenti generazioni che dovevano gestire due \textit{core network}: uno per la rete telefonica e un altro
+per \textit{internet}, per la prima volta il 4G introduce un unico \textit{core network} basato su \textit{Internet Protocol} (IP).\\
+Per consentire un aumento consistente della velocità le maggiori modifiche di questa generazione sono state apportate nella \textit{radio interface}, mentre
+l'architettura rimane con una struttura simile a quella precedente.
 \subsection{LTE}
+Il \textit{Long Term Evolution} è uno standard di quarta generazione che ha i seguenti componenti architetturali\cite{lte}:
+\begin{itemize}
+    \item \textit{Home Subscriber Server} (HSS) è il \textit{database} centrale dei \textit{subscriber} come l'HLR del GSM/UMTS.
+    \item \textit{Mobility Management Entity} (MME) il corrispettivo del VLR in GSM/UMTS.
+    \item \textit{Serving - Gateway} (S-GW) è un componente che svolge il ruolo di \textit{router} indirizzando i dati dalla \textit{base station}
+    al P-GW.
+    \item \textit{Packet data network - Gateway} (P-GW) è il componente per interfacciare il \textit{core network} con \textit{internet}.
+    \item \textit{Policy Control and Charging Rules Function} (PCRF) è un componente responsabile delle regole di gestione per il flusso di informazioni.
+\end{itemize}
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{images/4g-lte.jpg}
@@ -132,7 +147,7 @@ I principali blocchi che la compongono sono:
 \begin{itemize}
     \item AMF \textit{Core Access and Mobility Management Function} responsabile dell'autenticazione e localizzazione del dispositivo.
     \item SMF \textit{Sesson Management Function} per la gestione della sessione di ogni UE.
-    \item PCF\textit{Policy Control Function} per la gestione delle \textit{policy}
+    \item PCF\textit{Policy Control Function} per la gestione delle \textit{policy}.
     \item UDM \textit{Unified Data Management} per la gestione dell'identità dell'utente, questo compito era precedentemente svolto da HSS o HLR.
     \item AUSF \textit{Authentication Server Function} per effettuare l'autenticazione dell'utente.
     \item SDSF \textit{Structured Data Storage Network Function} è un helper per la memorizzazione di dati strutturati.

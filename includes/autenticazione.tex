@@ -1,7 +1,7 @@
 \chapter{Sistema di autenticazione}
 Il meccanismo di autenticazione è la procedura per verificare che un determinato dispositivo
 sia abilitato a connettersi alla rete.
-Questo procedimento avviene tramite l'\textit{Authentication and key agreement} (AKA), procedimento in cui
+Questo procedimento avviene tramite l'\gls{aka}, procedimento in cui
 il \textit{core network} abilita un dispositivo a connettersi, e come vedremo, dal 3G anche viceversa (autenticazione mutua).\\
 In questo capitolo verranno trattati le procedure di autenticazione\cite{identifications} per le generazioni dal 2G al 5G, il 1G è stato escluso 
 poiché ha un funzionamento completamente analogico.
@@ -9,23 +9,23 @@ poiché ha un funzionamento completamente analogico.
 \clearpage
 
 \section{2G}
-Il sistema di autenticazione di seconda generazione utilizza principalmente due codici univoci della SIM e del MS:
+Il sistema di autenticazione di seconda generazione utilizza principalmente due codici univoci della \gls{sim} e del \gls{ms}:
 \begin{itemize}
-    \item \textit{International Mobile Subscriber Identity} (IMSI) ovvero un codice identificatvo della SIM
-    \item \textit{International Mobile Equipment Identity} (IMEI) ovvero un codice identificativo del MS
+    \item \gls{imsi} ovvero un codice identificatvo della \gls{sim}
+    \item \gls{imei} ovvero un codice identificativo del \gls{ms}
 \end{itemize}
 Questi due codici saranno necessari anche per le prossime generazioni fino al 4G.\\
-La procedura di autenticazione di un MS segue questi passaggi:
+La procedura di autenticazione di un \gls{ms} segue questi passaggi:
 \begin{enumerate}
-    \item Il MS invia l'IMSI alla BTS di riferimento che lo inoltra al \textit{core network}, questo
-    avviene ogni volta che il MS vuole connettersi al \textit{network} e non risulta già registrato presso 
-    la rete di riferimento. In caso lo fosse, verrà utilizzato il TMSI \textit{Temporary MobileSubscriber Identity}
+    \item Il \gls{ms} invia l'\gls{imsi} alla \gls{bs} di riferimento che lo inoltra al \textit{core network}, questo
+    avviene ogni volta che il \gls{ms} vuole connettersi al \textit{network} e non risulta già registrato presso 
+    la rete di riferimento. In caso lo fosse, verrà utilizzato il \gls{tmsi}
     per preservare il suo anonimato.
-    \item L'AuC cerca la chiave Ki associata all'IMSI e insieme a un numero casuale RAND genera un codice SRES che verrà
-    salvato nel VLR.
-    \item Viene inviato al MS il RAND generato.
-    \item La stessa procedura viene fatta dal MS, che genera quindi il suo SRES e lo invia al VLR.
-    \item Il VLR confronta se l'SRES ricevuto corrisponde a quello generato dall'AuC, se corrispondono l'autenticazione risulta
+    \item L'\gls{auc} cerca la chiave Ki associata all'\gls{imsi} e insieme a un numero casuale RAND genera un codice \gls{sres} che verrà
+    salvato nel \gls{vlr}.
+    \item Viene inviato al \gls{ms} il RAND generato.
+    \item La stessa procedura viene fatta dal \gls{ms}, che genera quindi il suo \gls{sres} e lo invia al \gls{vlr}.
+    \item Il \gls{vlr} confronta se l'\gls{sres} ricevuto corrisponde a quello generato dall'\gls{auc}, se corrispondono l'autenticazione risulta
     effettuata con successo.
 \end{enumerate}
 
@@ -43,19 +43,19 @@ L'autenticazione nell'architettura di terza e quarta generazione è molto simile
 \begin{itemize}
     \item Viene introdotta l'autenticazione mutua per prevenire l'autenticazione a false \textit{base stations}.
     \item La lunghezza della chiave Ki viene incrementata da 64 a 128 bit.
-    \item Viene implementato un flag per verificare se le comunicazioni vengono compromesse durante la trasmissione chiamato \textit{Integrity Key} (IK).
+    \item Viene implementato un flag per verificare se le comunicazioni vengono compromesse durante la trasmissione chiamato \gls{ik}.
 \end{itemize}
 Il procedimento di autenticazione è il seguente\cite{4g-auth}:
 \begin{enumerate}
-    \item Il MS invia l'IMSI alla BTS di riferimento che lo inoltra al \textit{core network}.
-    \item L'AuC cerca la chiave Ki associata all'IMSI e insieme a un numero casuale RAND genera un codice SRES che verrà
-    salvato nel VLR.
-    \item Viene trovata la chiave Ki corrispondente all'IMSI dall'AuC, dopodichè viene generato un codice SRES con l'utilizzo di un numero randomico RAND.
+    \item Il \gls{ms} invia l'\gls{imsi} alla \gls{bs} di riferimento che lo inoltra al \textit{core network}.
+    \item L'\gls{auc} cerca la chiave Ki associata all'\gls{imsi} e insieme a un numero casuale RAND genera un codice \gls{sres} che verrà
+    salvato nel \gls{vlr}.
+    \item Viene trovata la chiave Ki corrispondente all'\gls{imsi} dall'\gls{auc}, dopodichè viene generato un codice \gls{sres} con l'utilizzo di un numero randomico RAND.
     Inoltre, viene generato un codice AUTN per permettere al MS di autenticare il \textit{network}.
-    \item Viene inviato al MS il RAND e AUTN.
-    \item Il MS autentica il \textit{network} confrontando il valore di AUTN ricevuto. Se il \textit{network} è valido, prosegue con la generazione del SRES.
-    \item Il VLR confronta se il SRES ricevuto corrisponde a quello generato dall'AuC, se corrispondono l'autenticazione risulta
-    effettuata con successo e viene generato,salvato e inviato il TMSI.
+    \item Viene inviato al \gls{ms} il RAND e AUTN.
+    \item Il \gls{ms} autentica il \textit{network} confrontando il valore di AUTN ricevuto. Se il \textit{network} è valido, prosegue con la generazione del \gls{sres}.
+    \item Il \gls{vlr} confronta se il SRES ricevuto corrisponde a quello generato dall'\gls{auc}, se corrispondono l'autenticazione risulta
+    effettuata con successo e viene generato,salvato e inviato il \gls{tmsi}.
 \end{enumerate}
 \begin{figure}[h]
     \centering
@@ -69,34 +69,34 @@ Il procedimento di autenticazione è il seguente\cite{4g-auth}:
 L'autenticazione della generazione 5G è molto diversa dalle precedenti poichè, come illustrato nella sezione 3.5, l'architettura è completamente rivista diventando una ramificazione di microservizi.
 Sono definiti tre protocolli di autenticazione:
 \begin{itemize}
-    \item 5G-AKA: 5G-Authentication and Key Management
-    \item EAP-AKA: Extensible Authentication Protocol – Authentication and Key Management
-    \item EAP-TLS: Extensible Authentication Protocol – Transport Layer Security
+    \item 5G-AKA: 5G-\textit{Authentication and Key Management}
+    \item EAP-AKA: \textit{Extensible Authentication Protocol – Authentication and Key Management}
+    \item EAP-TLS: \textit{Extensible Authentication Protocol – Transport Layer Security}
 \end{itemize}
 Rispetto alle generazioni precedenti ci sono stati i seguenti miglioramenti di sicurezza\cite{5g-vs-4g}:
 \begin{itemize}
-    \item L'IMSI non viene mai comunicato in chiaro ma sempre criptato
+    \item L'\gls{imsi} non viene mai comunicato in chiaro ma sempre criptato
     \item I componenti del \textit{network} coinvolti sono dei servizi
 \end{itemize}
 L'autenticazione è fondamentalmente diviso in due parti: La prima è l'inizializzazione dell'autenticazione e la scelta del metodo di autenticazione.
 La seconda è invece l'autenticazione mutua come avviene nelle generazioni precedenti.
 Lo schema di autenticazione è il seguente\cite{5g-auth}:
 \begin{enumerate}
-    \item Il MS invia il SUCI o 5G-GUTI alla BTS di riferimento che lo inoltra al AMF/SEAF,
-    il GUTI è un identificativo temporaneo simile al TMSI delle generazioni precedenti, invece il SUCI è un identificatore criptato
+    \item Il \gls{ms} invia il \gls{suci} o 5G-GUTI alla \gls{bs} di riferimento che lo inoltra al AMF/SEAF,
+    il GUTI è un identificativo temporaneo simile al \gls{tmsi} delle generazioni precedenti, invece il \gls{suci} è un identificatore criptato
     permanente.
-    \item il SEAF manda l'identificatore del dispositivo (SUCI o 5G-GUTI) e il \textit{Serving Network Name} (SNN) all'AUSF.
-    Il SNN è una concatenazione di codici identificativi di servizi e il codice identificativo del \textit{Serving Network}. Serve per capire 
+    \item il SEAF manda l'identificatore del dispositivo (\gls{suci} o 5G-GUTI) e il \gls{snn} all'AUSF.
+    Il \gls{snn} è una concatenazione di codici identificativi di servizi e il codice identificativo del \textit{serving network}. Serve per capire 
     a quale \textit{slice} vuole connettersi il dispositivo.
     \item L'AUSF controlla che la richiesta dal SEAF sia autorizzata a utilizzare il SNN, in caso non lo fosse risponde con un 
     apposito messaggio di errore.
-    \item L'AUSF reperisce la chiave associata all'identificativo nell'archivio UDM e genera il rispettivo SRES con un numero randomico RAND.
-    \item Viene inviato all'MS il RAND e AUTN (per l'autenticazione mutua).
-    \item Il MS procede con la creazione del SRES e lo invia al SEAF.
-    \item Il SEAF inoltra il SERS all'AUSF che si occupa di controllare se corrispondono e in caso confermare l'autenticazione.
+    \item L'AUSF reperisce la chiave associata all'identificativo nell'archivio UDM e genera il rispettivo \gls{sres} con un numero randomico RAND.
+    \item Viene inviato all'\gls{ms} il RAND e AUTN (per l'autenticazione mutua).
+    \item Il \gls{ms} procede con la creazione del \gls{sres} e lo invia al SEAF.
+    \item Il SEAF inoltra il \gls{sres} all'AUSF che si occupa di controllare se corrispondono e in caso confermare l'autenticazione.
 \end{enumerate}
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/auth-5g.png}
+    \includegraphics[width=1\textwidth]{images/auth-5g.png}
     \caption{Autenticazione nelle reti 5G}
 \end{figure}

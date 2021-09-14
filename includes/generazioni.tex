@@ -20,7 +20,7 @@ e ormai è stata rimpiazzata totalmente dalle generazioni digitali successive.\\
 L'architettura di questa generazione è molto semplice, è composta da tre componenti principali:
 \begin{itemize}
     \item Antenne per la trasmissione
-    \item \textit{Mobile Telephone Switching Office} (MTSO)
+    \item \gls{mtso}
     \item Unità mobile (cellulare)
 \end{itemize}
 \begin{figure}[ht]
@@ -28,7 +28,7 @@ L'architettura di questa generazione è molto semplice, è composta da tre compo
     \includegraphics[width=0.7\textwidth]{images/1g.jpg}
     \caption{Architettura 1G}
 \end{figure}
-Si basava sulla \textit{frequency-division multiple access} (FDMA) in cui ogni dispositivo che si connetteva alla stazione radio
+Si basava sulla \gls{fdma} in cui ogni dispositivo che si connetteva alla stazione radio
 aveva assegnata una specifica sotto banda\cite{generations}.
 
 \clearpage
@@ -39,39 +39,39 @@ Questa tecnologia cellulare è composta da diverse versioni che si sono sussegui
 funzionalità.
 Anche la sua architettura subisce delle modifiche, per questo verranno trattate separatamente in seguito.
 \subsubsection{GSM}
-Il GSM, ovvero \textit{Global System for Mobile Communications}\cite{gsm} è uno standard di seconda generazione che introuduce importanti novità.\\
+Il GSM, ovvero \gls{gsm}\cite{gsm} è uno standard di seconda generazione che introuduce importanti novità.\\
 Le principali caratteristiche introdotte sono:
 \begin{itemize}
     \item Maggiori velocità di trasmissione
     \item Cifratura della comunicazione
-    \item Introduzione di nuovi servizi come gli SMS
+    \item Introduzione di nuovi servizi come gli \gls{sms}
 \end{itemize}
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{images/2g-gsm.jpg}
     \caption{Architettura GSM}
 \end{figure}
-La sua architettura è composta da due macro aree: La BSS \textit{Base Station SubSystem} e la NSS \textit{Network SubSystem}.
+La sua architettura è composta da due macro aree: La \gls{bss} e la \gls{nss}.
 Il BSS è l'insieme delle antenne ricevitori che rappresentano il primo collegamento con il MS, mentre il NSS rappresenta il \textit{core network} del GSM.\\
 Il NSS è formato dai seguenti componenti:
 \begin{itemize}
-    \item \textit{Mobile Switching Centre} (MSC) è l'elemento centrale dell'atchitettura GSM, si occupa di interfacciare i BTS con la rete telefonica PTSN.
-    \item \textit{Home Location Register} (HLR) \textit{database} centrale che contiene informazioni inerenti a tutti i \textit{subscribers}, molte delle informazioni
+    \item \gls{msc} è l'elemento centrale dell'atchitettura GSM, si occupa di interfacciare i BTS con la rete telefonica \gls{ptsn}.
+    \item \gls{hlr} \textit{database} centrale che contiene informazioni inerenti a tutti i \textit{subscribers}, molte delle informazioni
     che contiene sono dei puntatori agli archivi seguenti.
-    \item \textit{Visitor Location Register} (VLR) \textit{database} che memorizza la posizione degli utenti.
-    \item \textit{Equipment Identity Register} (EIR) \textit{database} di identificazione degli IMEI dei dispositivi. Grazie a questo archivio è possibile creare delle \textit{blacklist}
+    \item \gls{vlr} \textit{database} che memorizza la posizione degli utenti.
+    \item \gls{eir} \textit{database} di identificazione degli IMEI dei dispositivi. Grazie a questo archivio è possibile creare delle \textit{blacklist}
     per evitare l'accesso a determinati dispositivi.
     con l'autenticazione.
-    \item \textit{Authenticaton Center} (AuC) \textit{database} di informazioni di sicurezza associate agli utenti registrati.
+    \item \gls{auc} \textit{database} di informazioni di sicurezza associate agli utenti registrati.
 \end{itemize}
 
 \clearpage
 
 \subsection{GPRS}
-La rete \textit{General Packet Radio Service} (GPRS)\cite{gprs-edge} introduce per la prima volta un trasferimento dati a commutazione di pacchetto per rendere 
+La rete \gls{gprs}\cite{gprs-edge} introduce per la prima volta un trasferimento dati a commutazione di pacchetto per rendere 
 possibile l'utilizzo dei servizi \textit{internet} con il proprio dispositivo cellulare\cite{gsm-architecture}.
-La sua architettura è la stessa di quella del GSM ma con dei componenti aggiuntivi che consentono la trasmissione dei pacchetti. 
-Per esempio, il \textit{Serving GPRS Support Node} (SGSN) è un componente per la gestione dei dispositivi connessi alla rete.
+La sua architettura è la stessa di quella del \gls{gsm} ma con dei componenti aggiuntivi che consentono la trasmissione dei pacchetti. 
+Per esempio, il \gls{sgsn} è un componente per la gestione dei dispositivi connessi alla rete.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{images/2g-gprs.png}
@@ -86,15 +86,15 @@ Evoluzione del GPRS che consente maggiori velocità, l'architettura resta invari
 L'architettura della terza generazione riprende quella già vista nella seconda. Infatti, questa generazione ha avuto come principale obbiettivo 
 quello di consolidare l'integrazione della rete internet nei sistemi cellulari ed aumentare la velocità di trasmissione per consentire l'utilizzo 
 di nuovi servizi.\\
-L'accesso al canale radio avviene con la tecnologia \textit{Wideband Code Division Multiple Access} (W-DCMA) con canale di banda 5 MHz.
+L'accesso al canale radio avviene con la tecnologia \gls{wcdma} con canale di banda 5 MHz.
 
 \subsection{UMTS}
-L'UMTS ovvero \textit{Universal Mobile Telecommunications System}\cite{umts} è il primo standard di terza generazione.
+Lo \gls{umts} è il primo standard di terza generazione.
 La sua architettura è composta dai seguenti elementi principali:
 \begin{itemize}
-    \item \textit{Mobile Switching Centre}, componente che ha la stessa funzione di quello in 2G, questa volta il VLR è integrato al suo interno.
-    \item HLR/AuC e EIR
-    \item SGSN e GGSN componenti ripresi dalla rete GPRS per la commutazione a pacchetto.
+    \item \gls{msc}, componente che ha la stessa funzione di quello in 2G, questa volta il \gls{vlr} è integrato al suo interno.
+    \item \gls{hlr}/\gls{auc} e \gls{eir}
+    \item \gls{sgsn} e \gls{ggsn} componenti ripresi dalla rete \gls{gprs} per la commutazione a pacchetto.
 \end{itemize}
 \begin{figure}[ht]
     \centering
@@ -104,7 +104,7 @@ La sua architettura è composta dai seguenti elementi principali:
 
 
 \subsection{HSPA/HSPA+}
-Evoluzione del UMTS per consentire velocità maggiori apportando modifiche nella trasmissione del segnale.
+Evoluzione del \gls{umts} per consentire velocità maggiori apportando modifiche nella trasmissione del segnale.
 Con questo nuovo standard si riescono a raggiungere velocità di 42 Mb/s\cite{hspa}.
 
 \clearpage
@@ -112,18 +112,18 @@ Con questo nuovo standard si riescono a raggiungere velocità di 42 Mb/s\cite{hs
 \section{4G}
 La quarta generazione è al momento quella più utilizzata, permette di avere dei servizi basati su velocità molto alte. 
 A differenza delle precedenti generazioni che dovevano gestire due \textit{core network}: uno per la rete telefonica e un altro
-per \textit{internet}, per la prima volta il 4G introduce un unico \textit{core network} basato su \textit{Internet Protocol} (IP).\\
+per \textit{internet}, per la prima volta il 4G introduce un unico \textit{core network} basato su \gls{ip}.\\
 Per consentire un aumento consistente della velocità le maggiori modifiche di questa generazione sono state apportate nella \textit{radio interface}, mentre
 l'architettura rimane con una struttura simile a quella precedente.
 \subsection{LTE}
-Il \textit{Long Term Evolution} è uno standard di quarta generazione che ha i seguenti componenti architetturali\cite{lte}:
+la \gls{lte} è uno standard di quarta generazione che ha i seguenti componenti architetturali\cite{lte}:
 \begin{itemize}
-    \item \textit{Home Subscriber Server} (HSS) è il \textit{database} centrale dei \textit{subscriber} come l'HLR del GSM/UMTS.
-    \item \textit{Mobility Management Entity} (MME) il corrispettivo del VLR in GSM/UMTS.
-    \item \textit{Serving - Gateway} (S-GW) è un componente che svolge il ruolo di \textit{router} indirizzando i dati dalla \textit{base station}
+    \item \gls{hss} è il \textit{database} centrale dei \textit{subscriber} come l'\gls{hlr} del \gls{gsm}/\gls{umts}.
+    \item \gls{mme} il corrispettivo del \gls{vlr} in \gls{gsm}/\gls{umts}.
+    \item \gls{sgw} è un componente che svolge il ruolo di \textit{router} indirizzando i dati dalla \textit{base station}
     al P-GW.
-    \item \textit{Packet data network - Gateway} (P-GW) è il componente per interfacciare il \textit{core network} con \textit{internet}.
-    \item \textit{Policy Control and Charging Rules Function} (PCRF) è un componente responsabile delle regole di gestione per il flusso di informazioni.
+    \item \gls{pgw} è il componente per interfacciare il \textit{core network} con \textit{internet}.
+    \item \gls{pcrf} è un componente responsabile delle regole di gestione per il flusso di informazioni.
 \end{itemize}
 \begin{figure}[ht]
     \centering
@@ -135,14 +135,14 @@ Il \textit{Long Term Evolution} è uno standard di quarta generazione che ha i s
 
 \section{5G}
 Il 5G, ovvero lo standard di quinta generazione rappresenta l'ultima frontiera della tecnologia cellulare.
-Il suo principale scopo è consentire l'\textit{Internet of Things} massivo, ossia un \textit{network} che sia 
+Il suo principale scopo è consentire lo \gls{iot} massivo, ossia un \textit{network} che sia 
 in grado di gestire la connessione di molti dispositivi con latenze molto piccole.
 Per consentire velocità fino a 10 Gb/s si sono
 dovute apportare importanti modifiche strutturali che rendono la sua architettura molto diversa da quelle viste fin'ora.\\
-L'architettura implementata prende il nome di \textit{Service-Base Architecture} (BSA).
-La BSA consiste nel dividere tutte le funzioni in una serie di \textit{microservices}\cite{5g-approach}. 
+L'architettura implementata prende il nome di \gls{sba}.
+La \gls{sba} consiste nel dividere tutte le funzioni in una serie di \textit{microservices}\cite{5g-approach}. 
 Questa nuova struttura è stata introdotta per garantire la scalabilità del sistema, migliorare le prestazioni (velocità) e per 
-permettere di realizzare il \textit{massive IOT}, che richiede la gestione simultanea di molti dispositivi.\\
+permettere di realizzare il \textit{massive} \gls{iot}, che richiede la gestione simultanea di molti dispositivi.\\
 I principali blocchi che la compongono sono:
 \begin{itemize}
     \item AMF \textit{Core Access and Mobility Management Function} responsabile dell'autenticazione e localizzazione del dispositivo.
@@ -168,7 +168,7 @@ I principali blocchi che la compongono sono:
 \subsection{Network Slicing}
 Il \textit{Network Slicing} rappresenta una delle caratteristiche più importanti del 5G. Con questo termine si intende il partizionamento della
 rete in diversi "piani" ciascuno con caratteristiche e requisiti particolari, indipendente e autonomo. Questo risulta fondamentale nella realizzazione 
-dell' IOT massivo, infatti in questo modo la gestione del traffico terrà conto dell'applicazione che viene utilizzata nel dispositivo per decidere quali prestazioni sono 
+dell' \gls{iot} massivo, infatti in questo modo la gestione del traffico terrà conto dell'applicazione che viene utilizzata nel dispositivo per decidere quali prestazioni sono 
 richieste da quel dispositivo.
 \begin{figure}[ht]
     \centering
@@ -187,5 +187,5 @@ La realizzazione del \textit{Network Slicing} avviene tramite i \textit{Software
 \clearpage
 
 \subsection{\textit{Software Defined Network} e  \textit{Network Function Virtualization}}
-I \textit{Software Defined Network} (SDN) sono dei programmi per la virtualizzazione della rete. Sono necessari per interfacciarsi a livello applicativo con i dispositivi cellulari 
+I \gls{sdn} sono dei programmi per la virtualizzazione della rete. Sono necessari per interfacciarsi a livello applicativo con i dispositivi cellulari 
 in modo da gestire il traffico della rete in modo efficace\cite{5g-sdn}.

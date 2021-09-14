@@ -13,13 +13,13 @@ Nel momento che un dispositivo si collega alla rete cellulare si possono verific
 \end{itemize}
 Quindi, è chiaro che per effettuare un \gls{dos} al sistema di autenticazione degli utenti è necessario disporre o simulare dei dispositivi con delle \gls{sim} valide. La validità della \gls{sim} è 
 in primo luogo controllata dalla presenza di un \gls{imsi} valido come spiegato nella sezione precedente.
-Di seguito verranno trattate le principali metodologie per effettuare un DOS al sistema di autenticazione.
+Di seguito verranno trattate le principali metodologie per effettuare un \gls{dos} al sistema di autenticazione.
 
 \clearpage
 
 \section{Botnet}
 Il metodo più conosciuto per creare un \textit{denial of service} a una rete cellulare è tramite una \textit{botnet}.
-In questo modo, l'attaccante ha a disposizione un elevato numero di dispositivi con SIM valida che hanno la possibilità di effettuare massivamente una procedura
+In questo modo, l'attaccante ha a disposizione un elevato numero di dispositivi con \gls{sim} valida che hanno la possibilità di effettuare massivamente una procedura
 di autenticazione causando delle dispendiose computazioni all'interno del \textit{network}.\\
 In \cite{measuring-dos} è descritto come effettuare un \gls{ddos} a una rete cellulare di tipo 2G/3G in modo da esasperare di richieste il suo componente più critico: l'\gls{hlr}.
 Con 11750 dispositivi infettati è possibile degradare le performance della \gls{hlr} del 93\%\cite{measuring-dos}, garantendo quindi un quasi totale malfunzionamento dell'infrastruttura.\\
@@ -39,22 +39,22 @@ attacco.
 \end{figure}\\
 Questi dispositivi sono ormai semplici da reperire \textit{online} a un prezzo abbordabile per chiunque. Per rubare l'\gls{imsi} si mette in pratica un attacco di tipo \textit{Man In The Middle} (MITM), spesso utilizzato
 anche per le intercettazioni da enti governativi.\\
-Nelle reti di seconda generazione questo risulta molto semplice poichè come spiegato nella sezione 5.1, l'\gls{imsi} viene trasmesso in chiaro se il MS è la prima volta che si connette al registro di quella specifica
-zona. Inoltre, dato che nel GSM l'autenticazione non è mutua è possibile creare una \textit{fake basestation} e collezzionare tutti gli \gls{imsi} dei dispositivi che si connettono.
+Nelle reti di seconda generazione questo risulta molto semplice poichè come spiegato nella sezione 5.1, l'\gls{imsi} viene trasmesso in chiaro se il \gls{ms} è la prima volta che si connette al registro di quella specifica
+zona. Inoltre, dato che nel \gls{gsm} l'autenticazione non è mutua è possibile creare una \textit{fake basestation} e collezzionare tutti gli \gls{imsi} dei dispositivi che si connettono.
 Sono stati introdotti diversi identificativi temporanei come il \gls{tmsi} per fare in modo che l'\gls{imsi} non debba essere inviato in ogni procedura di autenticazione, ma sono tutti facilmente raggirabili poichè cambiano con una
 frequenza troppo bassa.\\
-In \cite{dos-imsi} viene illustrato un metodo per ottenere gli \gls{imsi} di qualsiasi dispositivo nello standard UMTS nonostante l'autenticazione mutua. Infatti viene spiegato come basti mandare al MS una \textit{user identity request} impersonandosi 
+In \cite{dos-imsi} viene illustrato un metodo per ottenere gli \gls{imsi} di qualsiasi dispositivo nello standard UMTS nonostante l'autenticazione mutua. Infatti viene spiegato come basti mandare al \gls{ms} una \textit{user identity request} impersonandosi 
 la \gls{vlr} e il \gls{ms} risponderà con il proprio \gls{imsi} in chiaro.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{images/imsi-catch-umts.png}
-    \caption{\gls{imsi} \textit{catching} nelle reti UMTS\cite{dos-imsi}}
+    \caption{\gls{imsi} \textit{catching} nelle reti \gls{umts}\cite{dos-imsi}}
 \end{figure}\\
 
 \clearpage
 
 \section{Attacco alle reti con dispositivi SIM-less}
-In \cite{umts-dos} e \cite{gsm-dos-simless} sono descritti degli attacchi all'autenticazione degli utenti utilizzando dispositivi senza una SIM commerciale, ma bensì delle interfacce di comunicazione 
+In \cite{umts-dos} e \cite{gsm-dos-simless} sono descritti degli attacchi all'autenticazione degli utenti utilizzando dispositivi senza una \gls{sim} commerciale, ma bensì delle interfacce di comunicazione 
 programmabili. Questo è stato fatto perchè utilizzare dei \gls{ms} come dispositivi per effettuare un attacco \gls{dos} rappresenta un fattore limitante in termini di prestazioni. Infatti, 
 i sistemi operativi dei \gls{ms} impongono degli intervalli di tempo fra una richiesta e un'altra.\\
 Entrambi gli attacchi dimostrano che è possibile causare un \gls{dos} con un numero di dispositivi senza \gls{sim} molto minore rispetto allo stato dell'arte. 
@@ -85,7 +85,7 @@ Nell'immagine seguente vengono illustrati i messaggi e i canali in cui viaggiano
     \includegraphics[width=0.5\textwidth]{images/umts-air-channel.png}
     \caption{Messaggi scambiati durante l'autenticazione in una rete \gls{umts}\cite{umts-dos}}
 \end{figure}\\
-Nelle reti \gls{umts} è stato calcolato che il limite più stringente di TPS durante la comunicazione con la \textit{base station} è dato dal canale FACH con 28 \gls{tps}.
+Nelle reti \gls{umts} è stato calcolato che il limite più stringente di TPS durante la comunicazione con la \textit{base station} è dato dal canale \gls{fach} con 28 \gls{tps}.
 Questo, ha portato a concludere che bastano 446 dispositivi per effettuare una notevole degradazione del sistema, molti di meno rispetto degli 11K necessari per una \textit{botnet}\cite{dos-imsi}.\\
 Nello stesso articolo è spiegato come è possibile duplicare le prestazioni dell'attacco usando delle \gls{sim} valide. In questo modo infatti i vettori di autenticazione vengono generati una seconda volta se si segnala al
-\textit{network} che l'AUTN calcolato non risulta corretto.
+\textit{network} che l'\gls{autn} calcolato non risulta corretto.

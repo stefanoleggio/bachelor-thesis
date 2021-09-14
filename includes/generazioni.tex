@@ -52,14 +52,14 @@ Le principali caratteristiche introdotte sono:
     \caption{Architettura GSM}
 \end{figure}
 La sua architettura è composta da due macro aree: La \gls{bss} e la \gls{nss}.
-Il BSS è l'insieme delle antenne ricevitori che rappresentano il primo collegamento con il MS, mentre il NSS rappresenta il \textit{core network} del GSM.\\
-Il NSS è formato dai seguenti componenti:
+Il \gls{bss} è l'insieme delle antenne ricevitori che rappresentano il primo collegamento con il \gls{ms}, mentre il \gls{nss} rappresenta il \textit{core network} del \gls{gsm}.\\
+Il \gls{nss} è formato dai seguenti componenti:
 \begin{itemize}
-    \item \gls{msc} è l'elemento centrale dell'atchitettura GSM, si occupa di interfacciare i BTS con la rete telefonica \gls{ptsn}.
+    \item \gls{msc} è l'elemento centrale dell'atchitettura \gls{gsm}, si occupa di interfacciare le \gls{bs} con la rete telefonica \gls{ptsn}.
     \item \gls{hlr} \textit{database} centrale che contiene informazioni inerenti a tutti i \textit{subscribers}, molte delle informazioni
     che contiene sono dei puntatori agli archivi seguenti.
     \item \gls{vlr} \textit{database} che memorizza la posizione degli utenti.
-    \item \gls{eir} \textit{database} di identificazione degli IMEI dei dispositivi. Grazie a questo archivio è possibile creare delle \textit{blacklist}
+    \item \gls{eir} \textit{database} di identificazione degli \gls{imei} dei dispositivi. Grazie a questo archivio è possibile creare delle \textit{blacklist}
     per evitare l'accesso a determinati dispositivi.
     con l'autenticazione.
     \item \gls{auc} \textit{database} di informazioni di sicurezza associate agli utenti registrati.
@@ -78,7 +78,7 @@ Per esempio, il \gls{sgsn} è un componente per la gestione dei dispositivi conn
     \caption{Architettura GPRS}
 \end{figure}
 \subsection{EDGE}
-Evoluzione del GPRS che consente maggiori velocità, l'architettura resta invariata\cite{gprs-edge}.
+Evoluzione del \gls{gprs} che consente maggiori velocità, l'architettura resta invariata\cite{gprs-edge}.
 
 \clearpage
 
@@ -145,17 +145,17 @@ Questa nuova struttura è stata introdotta per garantire la scalabilità del sis
 permettere di realizzare il \textit{massive} \gls{iot}, che richiede la gestione simultanea di molti dispositivi.\\
 I principali blocchi che la compongono sono:
 \begin{itemize}
-    \item AMF \textit{Core Access and Mobility Management Function} responsabile dell'autenticazione e localizzazione del dispositivo.
-    \item SMF \textit{Sesson Management Function} per la gestione della sessione di ogni UE.
-    \item PCF\textit{Policy Control Function} per la gestione delle \textit{policy}.
-    \item UDM \textit{Unified Data Management} per la gestione dell'identità dell'utente, questo compito era precedentemente svolto da HSS o HLR.
-    \item AUSF \textit{Authentication Server Function} per effettuare l'autenticazione dell'utente.
-    \item SDSF \textit{Structured Data Storage Network Function} è un helper per la memorizzazione di dati strutturati.
-    \item UDSF \textit{Unstructured Data Storage Network Function} è un helper per la memorizzazione di dati non strutturati.
-    \item NEF \textit{Network Exposure Function} per esporre determinate funzionalità a servizi di terze parti.
-    \item NRF \textit{NF Repository Function} per scoprire tutti i servizi disponibili.
-    \item NSSF \textit{Network Slicing Selector Function} per selezionare una determinata partizione di \textit{network}.
-    \item UPF \textit{User Plane Function} trasporta il traffico dal RAN all'internet.
+    \item \gls{amf} responsabile dell'autenticazione e localizzazione del dispositivo.
+    \item \gls{smf} per la gestione della sessione di ogni \gls{ms}.
+    \item \gls{pcf} per la gestione delle \textit{policy}.
+    \item \gls{udm} per la gestione dell'identità dell'utente, questo compito era precedentemente svolto da \gls{hss} o \gls{hlr}.
+    \item \gls{ausf} per effettuare l'autenticazione dell'utente.
+    \item \gls{sdsf} è un helper per la memorizzazione di dati strutturati.
+    \item \gls{udsf} è un helper per la memorizzazione di dati non strutturati.
+    \item \gls{nef} per esporre determinate funzionalità a servizi di terze parti.
+    \item \gls{nrf} per scoprire tutti i servizi disponibili.
+    \item \gls{nssf} per selezionare una determinata partizione di \textit{network}.
+    \item \gls{upf} trasporta il traffico dal \gls{ran} all'internet.
 \end{itemize}
 \begin{figure}[ht]
     \centering
@@ -182,7 +182,7 @@ richieste delle prestazioni differenti, per esempio il settore delle \textit{cri
     \includegraphics[width=0.8\textwidth]{images/5g-slicing.jpg}
     \caption{\textit{Network slicing} nel 5G}
 \end{figure}\\
-La realizzazione del \textit{Network Slicing} avviene tramite i \textit{Software Degined Network} che nella prossima sezione verranno approfonditi.
+La realizzazione del \textit{Network Slicing} avviene tramite i \textit{Software Defined Network} che nella prossima sezione verranno approfonditi.
 
 \clearpage
 

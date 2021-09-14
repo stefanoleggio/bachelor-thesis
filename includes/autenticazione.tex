@@ -51,9 +51,9 @@ Il procedimento di autenticazione è il seguente\cite{4g-auth}:
     \item L'\gls{auc} cerca la chiave Ki associata all'\gls{imsi} e insieme a un numero casuale RAND genera un codice \gls{sres} che verrà
     salvato nel \gls{vlr}.
     \item Viene trovata la chiave Ki corrispondente all'\gls{imsi} dall'\gls{auc}, dopodichè viene generato un codice \gls{sres} con l'utilizzo di un numero randomico RAND.
-    Inoltre, viene generato un codice AUTN per permettere al MS di autenticare il \textit{network}.
-    \item Viene inviato al \gls{ms} il RAND e AUTN.
-    \item Il \gls{ms} autentica il \textit{network} confrontando il valore di AUTN ricevuto. Se il \textit{network} è valido, prosegue con la generazione del \gls{sres}.
+    Inoltre, viene generato un codice \gls{autn} per permettere al MS di autenticare il \textit{network}.
+    \item Viene inviato al \gls{ms} il RAND e \gls{autn}.
+    \item Il \gls{ms} autentica il \textit{network} confrontando il valore di \gls{autn} ricevuto. Se il \textit{network} è valido, prosegue con la generazione del \gls{sres}.
     \item Il \gls{vlr} confronta se il SRES ricevuto corrisponde a quello generato dall'\gls{auc}, se corrispondono l'autenticazione risulta
     effettuata con successo e viene generato,salvato e inviato il \gls{tmsi}.
 \end{enumerate}
@@ -82,18 +82,18 @@ L'autenticazione è fondamentalmente diviso in due parti: La prima è l'iniziali
 La seconda è invece l'autenticazione mutua come avviene nelle generazioni precedenti.
 Lo schema di autenticazione è il seguente\cite{5g-auth}:
 \begin{enumerate}
-    \item Il \gls{ms} invia il \gls{suci} o 5G-GUTI alla \gls{bs} di riferimento che lo inoltra al AMF/SEAF,
-    il GUTI è un identificativo temporaneo simile al \gls{tmsi} delle generazioni precedenti, invece il \gls{suci} è un identificatore criptato
+    \item Il \gls{ms} invia il \gls{suci} o 5G-GUTI alla \gls{bs} di riferimento che lo inoltra al \gls{amf}/\gls{seaf},
+    il \gls{guti} è un identificativo temporaneo simile al \gls{tmsi} delle generazioni precedenti, invece il \gls{suci} è un identificatore criptato
     permanente.
-    \item il SEAF manda l'identificatore del dispositivo (\gls{suci} o 5G-GUTI) e il \gls{snn} all'AUSF.
+    \item il \gls{seaf} manda l'identificatore del dispositivo (\gls{suci} o 5G-GUTI) e il \gls{snn} all'\gls{ausf}.
     Il \gls{snn} è una concatenazione di codici identificativi di servizi e il codice identificativo del \textit{serving network}. Serve per capire 
     a quale \textit{slice} vuole connettersi il dispositivo.
-    \item L'AUSF controlla che la richiesta dal SEAF sia autorizzata a utilizzare il SNN, in caso non lo fosse risponde con un 
+    \item L'\gls{ausf} controlla che la richiesta dal \gls{seaf} sia autorizzata a utilizzare il \gls{snn}, in caso non lo fosse risponde con un 
     apposito messaggio di errore.
-    \item L'AUSF reperisce la chiave associata all'identificativo nell'archivio UDM e genera il rispettivo \gls{sres} con un numero randomico RAND.
-    \item Viene inviato all'\gls{ms} il RAND e AUTN (per l'autenticazione mutua).
-    \item Il \gls{ms} procede con la creazione del \gls{sres} e lo invia al SEAF.
-    \item Il SEAF inoltra il \gls{sres} all'AUSF che si occupa di controllare se corrispondono e in caso confermare l'autenticazione.
+    \item L'gls{ausf} reperisce la chiave associata all'identificativo nell'archivio \gls{udm} e genera il rispettivo \gls{sres} con un numero randomico RAND.
+    \item Viene inviato all'\gls{ms} il RAND e \gls{autn} (per l'autenticazione mutua).
+    \item Il \gls{ms} procede con la creazione del \gls{sres} e lo invia al \gls{seaf}.
+    \item Il \gls{seaf} inoltra il \gls{sres} all'\gls{ausf} che si occupa di controllare se corrispondono e in caso confermare l'autenticazione.
 \end{enumerate}
 \begin{figure}[h]
     \centering

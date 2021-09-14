@@ -2,8 +2,8 @@
 Il meccanismo di autenticazione è la procedura per verificare che un determinato dispositivo
 sia abilitato a connettersi alla rete.
 Questo procedimento avviene tramite l'\gls{aka}, procedimento in cui
-il \textit{core network} abilita un dispositivo a connettersi, e come vedremo, dal 3G anche viceversa (autenticazione mutua).\\
-In questo capitolo verranno trattati le procedure di autenticazione\cite{identifications} per le generazioni dal 2G al 5G, il 1G è stato escluso 
+il \textit{core network} abilita un dispositivo a connettersi.\\
+In questo capitolo verranno trattate le procedure di autenticazione\cite{identifications} per le generazioni dal 2G al 5G, il 1G è stato escluso 
 poiché ha un funzionamento completamente analogico.
 
 \clearpage
@@ -11,8 +11,8 @@ poiché ha un funzionamento completamente analogico.
 \section{2G}
 Il sistema di autenticazione di seconda generazione utilizza principalmente due codici univoci della \gls{sim} e del \gls{ms}:
 \begin{itemize}
-    \item \gls{imsi} ovvero un codice identificatvo della \gls{sim}
-    \item \gls{imei} ovvero un codice identificativo del \gls{ms}
+    \item \gls{imsi} ovvero un codice identificatvo della \gls{sim}.
+    \item \gls{imei} ovvero un codice identificativo del \gls{ms}.
 \end{itemize}
 Questi due codici saranno necessari anche per le prossime generazioni fino al 4G.\\
 La procedura di autenticazione di un \gls{ms} segue questi passaggi:
@@ -37,7 +37,7 @@ La procedura di autenticazione di un \gls{ms} segue questi passaggi:
 
 \clearpage
 
-\section{3G-4G}
+\section{3G e 4G}
 Dato che l'autenticazione nelle reti 3G e 4G è molto simile, verranno trattate insieme in questa sezione.
 L'autenticazione nell'architettura di terza e quarta generazione è molto simile a quella della seconda salvo i seguenti miglioramenti:
 \begin{itemize}
@@ -55,12 +55,12 @@ Il procedimento di autenticazione è il seguente\cite{4g-auth}:
     \item Viene inviato al \gls{ms} il RAND e \gls{autn}.
     \item Il \gls{ms} autentica il \textit{network} confrontando il valore di \gls{autn} ricevuto. Se il \textit{network} è valido, prosegue con la generazione del \gls{sres}.
     \item Il \gls{vlr} confronta se il SRES ricevuto corrisponde a quello generato dall'\gls{auc}, se corrispondono l'autenticazione risulta
-    effettuata con successo e viene generato,salvato e inviato il \gls{tmsi}.
+    effettuata con successo e viene attribuito il \gls{tmsi} al \gls{ms}.
 \end{enumerate}
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.7\textwidth]{images/auth-3g.png}
-    \caption{Autenticazione nelle reti 3G-4G}
+    \caption{Autenticazione nelle reti 3G e 4G}
 \end{figure}
 
 \clearpage
@@ -69,20 +69,20 @@ Il procedimento di autenticazione è il seguente\cite{4g-auth}:
 L'autenticazione della generazione 5G è molto diversa dalle precedenti poichè, come illustrato nella sezione 3.5, l'architettura è completamente rivista diventando una ramificazione di microservizi.
 Sono definiti tre protocolli di autenticazione:
 \begin{itemize}
-    \item 5G-AKA: 5G-\textit{Authentication and Key Management}
-    \item EAP-AKA: \textit{Extensible Authentication Protocol – Authentication and Key Management}
-    \item EAP-TLS: \textit{Extensible Authentication Protocol – Transport Layer Security}
+    \item 5G-AKA: 5G-\textit{Authentication and Key Management}.
+    \item EAP-AKA: \textit{Extensible Authentication Protocol – Authentication and Key Management}.
+    \item EAP-TLS: \textit{Extensible Authentication Protocol – Transport Layer Security}.
 \end{itemize}
 Rispetto alle generazioni precedenti ci sono stati i seguenti miglioramenti di sicurezza\cite{5g-vs-4g}:
 \begin{itemize}
-    \item L'\gls{imsi} non viene mai comunicato in chiaro ma sempre criptato
-    \item I componenti del \textit{network} coinvolti sono dei servizi
+    \item L'\gls{imsi} non viene mai comunicato in chiaro ma sempre criptato.
+    \item I componenti del \textit{network} coinvolti sono dei servizi.
 \end{itemize}
-L'autenticazione è fondamentalmente diviso in due parti: La prima è l'inizializzazione dell'autenticazione e la scelta del metodo di autenticazione.
+L'autenticazione è divisa in due parti: La prima è l'inizializzazione dell'autenticazione e la scelta del metodo di autenticazione.
 La seconda è invece l'autenticazione mutua come avviene nelle generazioni precedenti.
 Lo schema di autenticazione è il seguente\cite{5g-auth}:
 \begin{enumerate}
-    \item Il \gls{ms} invia il \gls{suci} o 5G-GUTI alla \gls{bs} di riferimento che lo inoltra al \gls{amf}/\gls{seaf},
+    \item Il \gls{ms} invia il \gls{suci} o 5G-GUTI alla \gls{bs} di riferimento che lo inoltra al \gls{amf} o \gls{seaf},
     il \gls{guti} è un identificativo temporaneo simile al \gls{tmsi} delle generazioni precedenti, invece il \gls{suci} è un identificatore criptato
     permanente.
     \item il \gls{seaf} manda l'identificatore del dispositivo (\gls{suci} o 5G-GUTI) e il \gls{snn} all'\gls{ausf}.
@@ -90,7 +90,7 @@ Lo schema di autenticazione è il seguente\cite{5g-auth}:
     a quale \textit{slice} vuole connettersi il dispositivo.
     \item L'\gls{ausf} controlla che la richiesta dal \gls{seaf} sia autorizzata a utilizzare il \gls{snn}, in caso non lo fosse risponde con un 
     apposito messaggio di errore.
-    \item L'gls{ausf} reperisce la chiave associata all'identificativo nell'archivio \gls{udm} e genera il rispettivo \gls{sres} con un numero randomico RAND.
+    \item L'\gls{ausf} reperisce la chiave associata all'identificativo nell'archivio \gls{udm} e genera il rispettivo \gls{sres} con un numero randomico RAND.
     \item Viene inviato all'\gls{ms} il RAND e \gls{autn} (per l'autenticazione mutua).
     \item Il \gls{ms} procede con la creazione del \gls{sres} e lo invia al \gls{seaf}.
     \item Il \gls{seaf} inoltra il \gls{sres} all'\gls{ausf} che si occupa di controllare se corrispondono e in caso confermare l'autenticazione.

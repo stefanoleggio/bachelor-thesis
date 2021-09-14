@@ -6,7 +6,7 @@
 \usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
 \usepackage{graphicx}
 \usepackage[sorting=none]{biblatex}
-\usepackage{acro}
+\usepackage[acronym]{glossaries}
 \usepackage[italian]{babel}
 \usepackage{csquotes}
 \usepackage{setspace}
@@ -29,6 +29,12 @@
 }
 
 %
+%   Acronyms
+%
+\input{formats/acronyms.tex}
+\makenoidxglossaries
+
+%
 %   References
 %
 \addbibresource{formats/references.bib}
@@ -45,10 +51,8 @@
     \clearpage
     \listoffigures
     \clearpage
-    \input{formats/acronyms.tex}
-    %\printacronyms[include=abbrev,name=Abbreviations]
-    %\printnoidxglossary[type=acronym, title={Elenco delle abbreviazioni}]
-    %\printacronyms
+    \printnoidxglossary[type=acronym, title={Elenco delle abbreviazioni},nonumberlist]
+    \printacronyms
     \clearpage
     \input{includes/introduzione.tex}
     \clearpage

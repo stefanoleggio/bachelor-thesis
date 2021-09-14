@@ -1,6 +1,6 @@
 \chapter{La rete cellulare}
 La rete cellulare è la struttura \textit{hardware} e \textit{software} che consente il corretto
-funzionamento delle comunicazioni tramite i dispositivi cellulari, dalle normali comunicazioni vocali alle \textit{smart cities} nel 5G.\\
+funzionamento delle comunicazioni dei dispositivi cellulari.\\
 Grazie ad una fitta rete di antenne, i gestori telefonici riescono a garantire il servizio per la  gran parte del territorio mondiale.
 \begin{figure}[h]
     \centering
@@ -16,9 +16,9 @@ La loro struttura e architectura hanno subito numerosi cambiamenti nel corso del
 Si possono comunque identificare degli elementi chiave che sono presenti in tutte le generazioni:
 \begin{itemize}
     \item \gls{ms} ovvero il dispositivo cellulare, in alcune generazioni questo acronimo è leggermente diverso, come per esempio dal 3G è
-    lo \gls{ue}.
-    \item \gls{ran} ovvero l'infrastruttura fisica di antenne per la ricezione e trasmissione di informazioni per il dispositivo
-    \item \textit{Core Network} ovvero i componenti della sua architettura
+    lo \gls{ue}. Per comodità in queso documento verrà sempre utilizzato \gls{ms}.
+    \item \gls{ran} ovvero l'infrastruttura fisica di antenne per la ricezione e trasmissione di informazioni.
+    \item \textit{Core network} ovvero i componenti della sua architettura
 \end{itemize}
 \begin{figure}[h]
     \centering
@@ -28,7 +28,7 @@ Si possono comunque identificare degli elementi chiave che sono presenti in tutt
 
 \clearpage
 
-\noindent La \gls{ran} è composta ripetitori di segnale chiamati \gls{bs}. 
+\noindent La \gls{ran} è composta da ripetitori di segnale chiamati \gls{bs}. 
 Questi vengono disposti in modo capillare sul territorio, suddividendolo in diverse aree di competenza chiamate celle. Ognuna di queste può gestire
 un numero limitato di dispositivi in contemporanea, per questo, in caso di aree densamente popolate vengono 
 ridotte le aree di competenza di ciascuna antenna. Le celle quindi, possono avere una dimensione variabile che dipende dal contesto in cui devono essere inserite.
@@ -43,7 +43,7 @@ sono differenti rispetto a quelle usate dalle celle vicine per evitare interfere
 Celle sufficientemente distanti possono utilizzare le stesse frequenze poiché non corrono il rischio di interferenza, questo rappresenta
 un grande vantaggio per questa tecnologia.\\
 
-\noindent Per identificare e autenticare ogni \gls{ms} nella rete è necessario che sia fornito del \gls{sim}, ossia una scheda fisica 
+\noindent Per identificare e autenticare ogni \gls{ms} nella rete è necessario che questo sia fornito del \gls{sim}, ossia una scheda fisica 
 che contiene le chiavi per autenticarsi alla rete.
 \begin{figure}[h]
     \centering
@@ -56,10 +56,10 @@ che contiene le chiavi per autenticarsi alla rete.
 \section{Architettura}
 L'architettura di una rete cellulare è l'insieme dei componenti che permettono il suo corretto funzionamento come l'autenticazione e lo smistamento delle informazioni.\\
 Nella sezione seguente verranno trattate nel dettaglio tutte le architetture: dal 1G al 5G, elencando i loro componenti principali. Si può comunque stilare una lista di elementi 
-che devono essere in una architettura cellulare:
+che devono essere presenti in una architettura cellulare:
 \begin{itemize}
     \item Archivio delle chiavi di autenticazione dei \textit{subscribers}.
-    \item Archivio della posizione dei \textit{subscribers}, per permettere il raggiungimento del MS.
+    \item Archivio della posizione dei \textit{subscribers}, per permettere il raggiungimento del \gls{ms}.
     \item Un \textit{controller} centrale che si occupa di interpellare gli archivi e smistare le informazioni.
-    \item Componente per la commutazione a pacchetto, in caso la rete si interfacci a \textit{internet}.
+    \item Componente per la commutazione a pacchetto, in caso la rete si interfacci ad \textit{internet}.
 \end{itemize}

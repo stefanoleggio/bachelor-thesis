@@ -27,7 +27,7 @@ Questa tipologia di attacco è molto pericolosa, e spesso anche la più comune, 
 monitoraggio della rete. Inolte, è richiesto un numero molto elevato di dispositivi, sopratutto se si tiene presente che questi devono 
 appartenere alla stessa zona di competenza della \gls{hlr}.\\
 
-\section{\gls{imsi} \textit{catching}}
+\section{IMSI \textit{catching}}
 Un metodo alternativo all'utilizzo di una \textit{botnet} è avere a disposizione un \textit{database} di \gls{imsi} rubati per effettuare un \textit{flooding} di richieste di autenticazione.\\
 Dato che nelle reti 2G-4G l'\gls{imsi} viene trasmesso in chiaro al momento dell'autenticazione riuscire a ottenerli è abbastanza semplice.
 In \cite{imsi-catcher} vengono citati i modi più comuni per appropriarsene per poi utilizzarli in un 
@@ -35,7 +35,7 @@ attacco.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{images/imsi-catcher.jpg}
-    \caption{Strumento per rubare \gls{imsi}}
+    \caption{Strumento per rubare IMSI}
 \end{figure}\\
 Questi dispositivi sono ormai semplici da reperire \textit{online} a un prezzo abbordabile per chiunque. Per rubare l'\gls{imsi} si mette in pratica un attacco di tipo \textit{Man In The Middle} (MITM), spesso utilizzato
 anche per le intercettazioni da enti governativi.\\
@@ -48,7 +48,7 @@ la \gls{vlr} e il \gls{ms} risponderà con il proprio \gls{imsi} in chiaro.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{images/imsi-catch-umts.png}
-    \caption{\gls{imsi} \textit{catching} nelle reti \gls{umts}\cite{dos-imsi}}
+    \caption{IMSI \textit{catching} nelle reti UMTS\cite{dos-imsi}}
 \end{figure}\\
 
 \clearpage
@@ -66,7 +66,7 @@ Nell'immagine seguente vengono illustrati i messaggi e i canali in cui viaggiano
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{images/gsm-air-channel.png}
-    \caption{Messaggi scambiati durante l'autenticazione in una rete \gls{gsm}\cite{gsm-dos-simless}}
+    \caption{Messaggi scambiati durante l'autenticazione in una rete GSM\cite{gsm-dos-simless}}
 \end{figure}
 
 \clearpage
@@ -76,14 +76,14 @@ L'immagine seguente rappresenta un semplice schema del dispositivo con \gls{sim}
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{images/umts-dos-device.png}
-    \caption{Dispositivo per l'attacco \gls{dos} alle reti \gls{umts}\cite{umts-dos}}
+    \caption{Dispositivo per l'attacco DOS alle reti UMTS\cite{umts-dos}}
 \end{figure}\\
 Come è stato fatto per la rete \gls{gsm}, è stato necessario analizzare l'\textit{air interface} dell'\gls{umts} per valutare il numero di \gls{tps}.
 Nell'immagine seguente vengono illustrati i messaggi e i canali in cui viaggiano durante l'autenticazione alla rete \gls{umts}.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{images/umts-air-channel.png}
-    \caption{Messaggi scambiati durante l'autenticazione in una rete \gls{umts}\cite{umts-dos}}
+    \caption{Messaggi scambiati durante l'autenticazione in una rete UMTS\cite{umts-dos}}
 \end{figure}\\
 Nelle reti \gls{umts} è stato calcolato che il limite più stringente di TPS durante la comunicazione con la \textit{base station} è dato dal canale \gls{fach} con 28 \gls{tps}.
 Questo, ha portato a concludere che bastano 446 dispositivi per effettuare una notevole degradazione del sistema, molti di meno rispetto degli 11K necessari per una \textit{botnet}\cite{dos-imsi}.\\
